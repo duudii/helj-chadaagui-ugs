@@ -1,1298 +1,1020 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="mn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Azad ❤️</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-    rel="stylesheet"
-  >
-
-  <style>
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "DM Sans", sans-serif;
-
-      background:
-        radial-gradient(circle at top left, #ffd9e6 0, transparent 35%),
-        radial-gradient(circle at bottom right, #d9d5ff 0, transparent 35%),
-        #fff7fa;
-
-      color: #242124;
-      overflow-x: hidden;
-    }
-
-
-    section {
-      min-height: 100vh;
-
-      padding: 80px 24px;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-
-    .container {
-      width: 100%;
-      max-width: 1000px;
-
-      margin: auto;
-
-      text-align: center;
-    }
-
-
-    h1,
-    h2 {
-      font-family: "Playfair Display", serif;
-    }
-
-
-    h1 {
-      font-size: clamp(3rem, 9vw, 7rem);
-      line-height: 0.95;
-
-      margin-bottom: 25px;
-    }
-
-
-    h2 {
-      font-size: clamp(2.3rem, 6vw, 4.5rem);
-
-      margin-bottom: 25px;
-    }
-
-
-    p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-
-      color: #645c63;
-    }
-
-
-    .small-text {
-      font-size: 0.9rem;
-
-      opacity: 0.65;
-
-      margin-top: 18px;
-    }
-
-
-    /* =========================
-       BUTTON
-    ========================= */
-
-    .button {
-      display: inline-block;
-
-      margin-top: 35px;
-
-      padding: 15px 28px;
-
-      border: none;
-      border-radius: 100px;
-
-      background: #242124;
-
-      color: white;
-
-      font-family: inherit;
-      font-size: 1rem;
-      font-weight: 600;
-
-      cursor: pointer;
-
-      text-decoration: none;
-
-      transition: 0.25s ease;
-    }
-
-
-    .button:hover {
-      transform: translateY(-3px);
-
-      box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.16);
-    }
-
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      position: relative;
-    }
-
-
-    .hero .eyebrow {
-      display: inline-block;
-
-      background: white;
-
-      padding: 10px 18px;
-
-      border-radius: 100px;
-
-      margin-bottom: 25px;
-
-      box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.06);
-    }
-
-
-    .heart {
-      display: inline-block;
-
-      animation: heartbeat 1.5s infinite;
-    }
-
-
-    @keyframes heartbeat {
-
-      0%,
-      100% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.15);
-      }
-
-    }
-
-
-    /* =========================
-       MAIN LETTER
-    ========================= */
-
-    .letter-card {
-      max-width: 720px;
-
-      margin: auto;
-
-      padding: 55px 45px;
-
-      background:
-        rgba(255, 255, 255, 0.75);
-
-      border:
-        1px solid rgba(255, 255, 255, 0.9);
-
-      backdrop-filter: blur(20px);
-
-      border-radius: 35px;
-
-      box-shadow:
-        0 25px 70px rgba(73, 32, 49, 0.08);
-    }
-
-
-    .letter-card p {
-      margin-bottom: 20px;
-    }
-
-
-    /* =========================
-       LITTLE LETTERS
-    ========================= */
-
-    .letter-grid {
-      margin-top: 50px;
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 20px;
-
-      text-align: left;
-    }
-
-
-    .mini-letter {
-      position: relative;
-
-      min-height: 310px;
-
-      padding: 35px 30px;
-
-      background:
-        rgba(255, 255, 255, 0.8);
-
-      border:
-        1px solid rgba(255, 255, 255, 0.95);
-
-      border-radius: 28px;
-
-      box-shadow:
-        0 20px 50px rgba(73, 32, 49, 0.07);
-
-      transition: 0.3s ease;
-    }
-
-
-    .mini-letter:hover {
-      transform: translateY(-8px);
-    }
-
-
-    .letter-number {
-      display: inline-block;
-
-      margin-bottom: 45px;
-
-      font-size: 0.85rem;
-
-      letter-spacing: 2px;
-
-      opacity: 0.45;
-    }
-
-
-    .mini-letter h3 {
-      font-family:
-        "Playfair Display",
-        serif;
-
-      font-size: 1.7rem;
-
-      margin-bottom: 18px;
-    }
-
-
-    .mini-letter p {
-      font-size: 1rem;
-
-      line-height: 1.8;
-    }
-
-
-    /* =========================
-       EXTRA LETTER
-    ========================= */
-
-    .extra-letter {
-      max-width: 750px;
-
-      margin: 70px auto 10px;
-
-      padding: 45px;
-
-      background: white;
-
-      border-radius: 30px;
-
-      box-shadow:
-        0 20px 60px rgba(73, 32, 49, 0.07);
-    }
-
-
-    .extra-letter span {
-      display: block;
-
-      margin-bottom: 20px;
-
-      font-size: 0.8rem;
-
-      text-transform: uppercase;
-
-      letter-spacing: 3px;
-
-      opacity: 0.45;
-    }
-
-
-    .extra-letter p {
-      font-family:
-        "Playfair Display",
-        serif;
-
-      font-size:
-        clamp(1.4rem, 3vw, 2rem);
-
-      line-height: 1.6;
-
-      color: #302a2e;
-    }
-
-
-    /* =========================
-       SPOTIFY GIFT
-    ========================= */
-
-    .gift-section {
-      background: #151515;
-
-      color: white;
-    }
-
-
-    .gift-section p {
-      color: #b8b8b8;
-    }
-
-
-    .gift-box {
-      max-width: 580px;
-
-      margin: 45px auto 0;
-
-      background: #1f1f1f;
-
-      border: 1px solid #303030;
-
-      border-radius: 35px;
-
-      padding: 40px;
-
-      transition: 0.4s ease;
-    }
-
-
-    .spotify-logo {
-      width: 90px;
-      height: 90px;
-
-      margin: 0 auto 25px;
-
-      border-radius: 50%;
-
-      display: grid;
-      place-items: center;
-
-      background: #1ed760;
-
-      color: #000;
-
-      font-size: 45px;
-      font-weight: 700;
-    }
-
-
-    .gift-hidden {
-      display: none;
-
-      opacity: 0;
-
-      transform:
-        translateY(25px);
-    }
-
-
-    .gift-visible {
-      display: block;
-
-      animation:
-        reveal 0.6s forwards;
-    }
-
-
-    @keyframes reveal {
-
-      to {
-        opacity: 1;
-
-        transform:
-          translateY(0);
-      }
-
-    }
-
-
-    .gift-code {
-      margin: 25px 0;
-
-      padding: 20px;
-
-      border:
-        1px dashed #555;
-
-      border-radius: 18px;
-
-      font-family: monospace;
-
-      font-size: 1.3rem;
-
-      letter-spacing: 2px;
-
-      word-break:
-        break-word;
-
-      color: white;
-    }
-
-
-    .spotify-button {
-      background: #1ed760;
-
-      color: #000;
-    }
-
-
-    /* =========================
-       FINAL MESSAGE
-    ========================= */
-
-    .final-message {
-      max-width: 650px;
-
-      margin: auto;
-    }
-
-
-    .final-heart {
-      font-size: 5rem;
-
-      margin-bottom: 25px;
-    }
-
-
-    /* =========================
-       FLOATING HEARTS
-    ========================= */
-
-    .floating-heart {
-      position: fixed;
-
-      bottom: -50px;
-
-      pointer-events: none;
-
-      animation:
-        floatUp linear forwards;
-
-      z-index: 999;
-    }
-
-
-    @keyframes floatUp {
-
-      from {
-        transform:
-          translateY(0)
-          rotate(0deg);
-
-        opacity: 1;
-      }
-
-      to {
-        transform:
-          translateY(-110vh)
-          rotate(360deg);
-
-        opacity: 0;
-      }
-
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 750px) {
-
-      section {
-        padding:
-          70px 18px;
-      }
-
-
-      .letter-card {
-        padding:
-          40px 25px;
-      }
-
-
-      .letter-grid {
-        grid-template-columns:
-          1fr;
-      }
-
-
-      .mini-letter {
-        min-height: auto;
-      }
-
-
-      .extra-letter {
-        padding:
-          35px 25px;
-      }
-
-    }
-
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#0b0b10">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="description" content="Хэлж Чадаагүй Үгс — Анужин охины тухай сэтгэл судлалын салаалсан өгүүлэмжтэй тоглоом">
+<title>Хэлж Чадаагүй Үгс</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;700;800&family=Noto+Serif:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--f:18px;--accent:#f2a7b8;--panel:rgba(14,13,20,.95)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:#0b0b10;color:#eee;font-family:'Noto Sans','Segoe UI',Arial,sans-serif;overflow:hidden;touch-action:manipulation;user-select:none;-webkit-user-select:none;overscroll-behavior:none}
+button{font-family:inherit}
+#stage{position:absolute;background:#000;box-shadow:0 0 0 1px #222,0 20px 80px #000;overflow:hidden}
+#game{width:100%;height:100%;display:block;transition:filter 1.4s ease;cursor:pointer;touch-action:none}
+#ui{position:absolute;pointer-events:none;z-index:5;font-size:var(--f)}
+
+/* HUD */
+#hud{position:absolute;left:0;right:0;top:0;display:flex;align-items:center;gap:12px;padding:10px 14px;pointer-events:none;opacity:0;transition:opacity .5s}
+#hud.show{opacity:1}
+#chName{font-weight:800;font-size:.8em;letter-spacing:.06em;color:#fff;text-shadow:0 2px 4px #000,0 0 10px #000;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#dots{display:flex;gap:5px;align-items:center;padding:5px 8px;background:rgba(0,0,0,.35);border-radius:20px}
+#dots i{width:9px;height:9px;border-radius:50%;border:1.5px solid #8a8590;display:block}
+#dots i.on{background:#ffcf7a;border-color:#ffcf7a;box-shadow:0 0 8px #ffcf7a99}
+#dots i.off{background:#55525c;border-color:#55525c}
+.ibtn{pointer-events:auto;border:1px solid rgba(255,255,255,.25);background:rgba(10,10,16,.7);color:#fff;font-weight:800;font-size:.62em;padding:6px 9px;border-radius:6px;cursor:pointer;letter-spacing:.04em}
+.ibtn:active{transform:scale(.96)}
+
+#prompt{position:absolute;left:50%;bottom:5%;transform:translateX(-50%);padding:6px 14px;background:rgba(10,10,15,.88);border:1px solid rgba(255,255,255,.22);border-radius:20px;font-weight:800;font-size:.78em;white-space:nowrap;opacity:0;transition:opacity .2s}
+#prompt.show{opacity:1}
+#prompt b{color:var(--accent);margin-right:6px}
+body.touch #prompt b{display:none}
+
+/* dialogue */
+#dlg{position:absolute;left:3.5%;right:3.5%;bottom:4.5%;min-height:27%;padding:.85em 2.6em .9em 1.05em;background:var(--panel);border:2px solid rgba(255,255,255,.26);border-radius:10px;box-shadow:0 10px 34px #000b;display:none;pointer-events:auto;cursor:pointer}
+#dlg.show{display:block;animation:pop .18s ease-out}
+#who{display:none;margin-bottom:.3em;padding:.12em .6em;border-radius:5px;font-weight:800;font-size:.78em;letter-spacing:.04em;background:#3a2f3a;color:#fff}
+#txt{font-weight:700;line-height:1.5;color:#fff;text-shadow:0 1px 2px #000;min-height:3em}
+#txt.narr{color:#e9e2e6;font-style:italic;font-weight:600}
+#more{position:absolute;right:.8em;bottom:.5em;color:var(--accent);font-weight:900;animation:bob 1s infinite}
+@keyframes bob{50%{transform:translateY(3px)}}
+@keyframes pop{from{transform:translateY(6px);opacity:0}to{transform:none;opacity:1}}
+
+/* choices */
+#choice{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:.6em;padding:4%;background:rgba(6,6,10,.62);pointer-events:auto}
+#choice.show{display:flex;animation:pop .25s ease-out}
+#cq{font-weight:800;color:#fff;text-align:center;text-shadow:0 2px 6px #000;margin-bottom:.2em;font-size:.95em}
+.opt{display:flex;gap:.7em;align-items:center;width:min(88%,640px);text-align:left;padding:.75em 1em;border-radius:10px;border:2px solid rgba(255,255,255,.22);background:rgba(20,18,28,.96);color:#fff;font-size:.92em;font-weight:700;line-height:1.35;cursor:pointer;transition:transform .12s,border-color .12s,background .12s}
+.opt .k{flex:none;width:1.7em;height:1.7em;border-radius:50%;display:grid;place-items:center;background:#3a3342;color:var(--accent);font-weight:900;font-size:.85em}
+.opt.sel,.opt:hover{border-color:var(--accent);background:rgba(48,34,46,.98);transform:translateX(3px)}
+body.touch .opt .k{display:none}
+
+/* research card */
+#card{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:20;background:rgba(5,5,9,.72);padding:16px;pointer-events:auto}
+#card.show{display:flex}
+#cardIn{width:min(560px,100%);max-height:92vh;overflow:auto;background:linear-gradient(180deg,#fbf6ee,#efe6d8);color:#2a2228;border-radius:14px;padding:20px 22px 18px;box-shadow:0 20px 60px #000c;animation:pop .3s ease-out;position:relative}
+#cardIn .tag{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:900;letter-spacing:.12em;color:#8b4a5c;background:#f3dce2;padding:4px 10px;border-radius:20px}
+#cardIn h3{font-family:'Noto Serif',Georgia,serif;margin:12px 0 8px;font-size:clamp(19px,2.4vw,24px);line-height:1.25;color:#2a1f26}
+#cardIn p{margin:0 0 10px;font-size:clamp(15px,1.7vw,17px);line-height:1.6;font-weight:500}
+#cardIn .why{border-left:3px solid #d98aa0;padding:6px 10px;background:#f6e9e3;border-radius:0 8px 8px 0;font-style:italic;font-weight:600;color:#5a3a46}
+#cardIn .cite{font-size:13px;color:#7a6a70;font-weight:700;margin-top:6px}
+#cardIn button{margin-top:14px;width:100%;padding:12px;border:0;border-radius:9px;background:#2a2228;color:#fff;font-weight:800;font-size:16px;cursor:pointer}
+#cardIn button:active{transform:scale(.98)}
+
+/* overlays */
+.ov{position:fixed;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:30;padding:20px;pointer-events:auto;overflow:auto}
+.ov.show{display:flex;justify-content:flex-start}
+.ov.show>:first-child{margin-top:auto}.ov.show>:last-child{margin-bottom:auto}
+.ov h1{font-family:'Noto Serif',Georgia,serif;margin:0 0 10px;color:#fff;font-size:clamp(30px,6vw,58px);letter-spacing:.04em;text-shadow:0 4px 18px #000}
+.ov .sub{font-size:clamp(16px,2.2vw,22px);font-weight:700;color:#e2d8de;margin:4px 0;max-width:720px}
+.ov .small{font-size:clamp(13px,1.5vw,15px);color:#b6aeb4;font-weight:600;max-width:640px;line-height:1.55;margin-top:10px}
+.big{margin-top:22px;padding:13px 34px;border:2px solid #f2a7b8;background:#2a1d26;border-radius:10px;color:#ffe0e8;font-size:clamp(17px,2vw,21px);font-weight:900;cursor:pointer;letter-spacing:.06em}
+.big:hover{background:#3a2632}
+.ghost{margin:8px 5px 0;padding:10px 18px;border:1px solid #777;background:transparent;border-radius:8px;color:#ddd;font-weight:800;cursor:pointer;font-size:15px}
+#intro{background:radial-gradient(ellipse at 50% 40%,#2a1f2c 0%,#0b0b10 70%)}
+#intro .ctl{margin-top:16px;font-size:14px;color:#9d96a0;line-height:1.7}
+#ending{background:rgba(14,13,20,.94)}
+#ending .quote{font-family:'Noto Serif',Georgia,serif;font-size:clamp(19px,2.8vw,30px);font-weight:700;color:#f6eef1;margin:6px 0 10px;max-width:780px}
+#summary{margin:14px auto 4px;text-align:left;display:inline-block;background:rgba(255,255,255,.05);padding:12px 18px;border-radius:10px;font-size:15px;line-height:1.75}
+#summary .o{color:#ffcf7a}#summary .c{color:#8c8892}
+#help{margin-top:16px;font-size:13px;color:#b9b1b6;max-width:560px;line-height:1.5;padding:10px 14px;border:1px solid #3a3540;border-radius:8px}
+#refs{background:rgba(10,10,15,.96);z-index:40;justify-content:flex-start}
+#refs .list{text-align:left;max-width:760px;font-size:14px;line-height:1.6;color:#ddd}
+#refs .list p{margin:0 0 10px;padding-left:22px;text-indent:-22px}
+#refs h2{font-family:'Noto Serif',Georgia,serif;margin:18px 0 14px}
+#titleCard{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;z-index:15;opacity:0;transition:opacity .7s}
+#titleCard.show{opacity:1}
+#titleCard .a{font-family:'Noto Serif',Georgia,serif;font-size:clamp(34px,7vw,64px);font-weight:800;color:#fff;letter-spacing:.08em;text-shadow:0 4px 20px #000}
+#titleCard .b{font-size:clamp(16px,2.4vw,24px);font-weight:700;color:#d9cdd3;margin-top:6px;letter-spacing:.05em}
+#toast{position:fixed;left:50%;top:14%;transform:translateX(-50%);background:rgba(20,18,26,.95);border:1px solid #f2a7b866;color:#fff;padding:10px 16px;border-radius:10px;font-weight:700;font-size:14px;z-index:16;opacity:0;transition:opacity .5s;pointer-events:none;max-width:90vw;text-align:center}
+#toast.show{opacity:1}
+#idle{display:none}
+
+/* portrait phone: canvas on top, UI panel below */
+body.portrait #ui{background:linear-gradient(180deg,#141219,#0b0b10)}
+body.portrait #hud{position:relative;opacity:1}
+body.portrait #dlg{top:56px;bottom:auto;left:12px;right:12px;min-height:140px;padding:14px 40px 16px 16px}
+body.portrait #choice{top:52px;bottom:auto;inset:auto 0 auto 0;background:none;justify-content:flex-start;padding:4px 12px 20px}
+body.portrait .opt{width:100%;font-size:1em;padding:.9em 1em}
+body.portrait #prompt{top:70px;bottom:auto}
+body.portrait #idle{display:block;position:absolute;left:16px;right:16px;bottom:22px;text-align:center;color:#8d8692;font-size:14px;line-height:1.55;font-weight:600}
+body.portrait #idle .rot{display:block;margin-top:8px;color:#6d6672;font-size:12.5px}
+</style>
 </head>
-
-
 <body>
-
-
-  <!-- =========================
-       1. LANDING
-  ========================= -->
-
-  <section
-    class="hero"
-    id="home"
-  >
-
-    <div class="container">
-
-      <div class="eyebrow">
-
-        Хамгийн хайртай хүндээ
-
-        <span class="heart">
-          ❤️
-        </span>
-
-      </div>
-
-
-      <h1>
-
-        
-
-        <br>
-
-        Чамд зориулж бэлдсэн
-
-        <br>
-
-        бэлгийг минь хүлээн авна уу.
-
-      </h1>
-
-
-      <p>
-
-        ИХ зүйл биш, гэхдээ хичээж хийсэн зүйл шүү.
-
-  
-
-      </p>
-
-
-      <a
-        class="button"
-        href="#letter"
-      >
-
-        Онгойлго ↓
-
-      </a>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       2. MAIN LOVE LETTER
-  ========================= -->
-
-  <section id="letter">
-
-    <div class="container">
-
-      <div class="letter-card">
-
-
-        <h2>
-
-          Хүндэт Азбилэгдээ,
-
-        </h2>
-
-
-        <p>
-
-          Энгийн зүйлээс арай өөр 
-          юм өгье гэж бодоод
-          энийг хйилээ.
-
-          
-          just another message
-          or another gift.
-
-        </p>
-
-
-        <p>
-
-          So I made you
-          your own little website.
-
-        </p>
-
-
-        <p>
-
-          Thank you for being
-          someone I can laugh with,
-          annoy, talk to,
-          and make memories with.
-
-        </p>
-
-
-        <p>
-
-          I don't know if I tell you
-          enough how much I appreciate
-          having you in my life.
-
-          Even normal days somehow
-          feel better when
-          you're part of them.
-
-        </p>
-
-
-        <p>
-
-          And because you somehow
-          make my days better
-          just by being in them,
-
-          I wanted to give you
-          a little something too.
-
-        </p>
-
-
-        <a
-          class="button"
-          href="#letters"
-        >
-
-          Keep going →
-
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       3. LITTLE LETTERS
-  ========================= -->
-
-  <section id="letters">
-
-    <div class="container">
-
-
-      <h2>
-
-        Things I want you to know.
-
-      </h2>
-
-
-      <p>
-
-        Just a few little notes
-        from me to you.
-
-      </p>
-
-
-
-      <div class="letter-grid">
-
-
-        <!-- LETTER 1 -->
-
-        <div class="mini-letter">
-
-          <span class="letter-number">
-
-            01
-
-          </span>
-
-
-          <h3>
-
-            I appreciate you.
-
-          </h3>
-
-
-          <p>
-
-            I don't always say it
-            enough, but I really
-            appreciate all the
-            little things you do.
-
-            Even the things
-            you probably don't
-            think I notice.
-
-          </p>
-
-        </div>
-
-
-
-        <!-- LETTER 2 -->
-
-        <div class="mini-letter">
-
-          <span class="letter-number">
-
-            02
-
-          </span>
-
-
-          <h3>
-
-            You make me happy.
-
-          </h3>
-
-
-          <p>
-
-            Somehow, even the most
-            normal days feel better
-            when I get to talk to you.
-
-            You're genuinely one
-            of my favorite parts
-            of every day.
-
-          </p>
-
-        </div>
-
-
-
-        <!-- LETTER 3 -->
-
-        <div class="mini-letter">
-
-          <span class="letter-number">
-
-            03
-
-          </span>
-
-
-          <h3>
-
-            I choose you.
-
-          </h3>
-
-
-          <p>
-
-            Through the good days,
-            the annoying days,
-            the stupid arguments,
-            the laughs,
-
-            and everything
-            in between —
-
-            you're still the person
-            I want beside me.
-
-          </p>
-
-        </div>
-
-
-      </div>
-
-
-
-      <!-- EXTRA NOTE -->
-
-      <div class="extra-letter">
-
-        <span>
-
-          one last note...
-
-        </span>
-
-
-        <p>
-
-          There are so many things
-          I could write here,
-
-          but I think the simplest
-          version is this:
-
-          <br><br>
-
-          <strong>
-
-            I'm really lucky
-            to have you.
-
-          </strong>
-
-        </p>
-
-      </div>
-
-
-
-      <a
-        class="button"
-        href="#gift"
-      >
-
-        Okay... now your gift →
-
-      </a>
-
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       4. SPOTIFY GIFT
-  ========================= -->
-
-  <section
-    class="gift-section"
-    id="gift"
-  >
-
-    <div class="container">
-
-
-      <h2>
-
-        One more thing...
-
-      </h2>
-
-
-      <p>
-
-        Because you deserve
-        a soundtrack without
-        ads interrupting it.
-
-      </p>
-
-
-
-      <div class="gift-box">
-
-
-        <!-- BEFORE REVEAL -->
-
-        <div id="beforeGift">
-
-
-          <div class="spotify-logo">
-
-            ♪
-
-          </div>
-
-
-          <h2
-            style="font-size: 2rem;"
-          >
-
-            I got you something.
-
-          </h2>
-
-
-          <p>
-
-            Press the button.
-
-          </p>
-
-
-          <button
-            class="button spotify-button"
-            onclick="revealGift()"
-          >
-
-            Reveal your gift 🎁
-
-          </button>
-
-
-        </div>
-
-
-
-        <!-- AFTER REVEAL -->
-
-        <div
-          id="giftContent"
-          class="gift-hidden"
-        >
-
-
-          <div class="spotify-logo">
-
-            ♪
-
-          </div>
-
-
-          <h2
-            style="font-size: 2.5rem;"
-          >
-
-            Spotify Premium
-
-          </h2>
-
-
-          <p>
-
-            For all the songs
-            you love...
-
-            <br><br>
-
-            and all the songs
-            that are going to
-            remind you of me.
-
-            ❤️
-
-          </p>
-
-
-
-          <!--
-            PUT YOUR
-            SPOTIFY GIFT CODE
-            HERE
-          -->
-
-          <div
-            class="gift-code"
-            id="giftCode"
-          >
-
-            YOUR-SPOTIFY-CODE-HERE
-
-          </div>
-
-
-
-          <button
-            class="button"
-            onclick="copyCode()"
-          >
-
-            Copy gift code
-
-          </button>
-
-
-
-          <br>
-
-
-
-          <a
-            class="button spotify-button"
-            href="https://www.spotify.com/redeem/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            Redeem on Spotify ↗
-
-          </a>
-
-
-          <p
-            class="small-text"
-            id="copyMessage"
-          ></p>
-
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       5. FINAL MESSAGE
-  ========================= -->
-
-  <section id="final">
-
-    <div
-      class="container final-message"
-    >
-
-
-      <div class="final-heart">
-
-        ❤️
-
-      </div>
-
-
-      <h2>
-
-        That's it.
-
-      </h2>
-
-
-      <p>
-
-        Except it's not really.
-
-        <br><br>
-
-        There are still a lot
-        more songs to listen to,
-
-        places to go,
-
-        stupid jokes to make,
-
-        random conversations
-        to have,
-
-        and memories I still
-        want to make with you.
-
-      </p>
-
-
-      <p
-        style="
-          margin-top: 30px;
-          font-size: 1.4rem;
-        "
-      >
-
-        I love you.
-
-      </p>
-
-
-      <p class="small-text">
-
-        — [your name]
-
-      </p>
-
-
-    </div>
-
-  </section>
-
-
-
-  <script>
-
-
-    /* =========================
-       REVEAL SPOTIFY GIFT
-    ========================= */
-
-    function revealGift() {
-
-      const beforeGift =
-        document.getElementById(
-          "beforeGift"
-        );
-
-
-      const giftContent =
-        document.getElementById(
-          "giftContent"
-        );
-
-
-      beforeGift.style.display =
-        "none";
-
-
-      giftContent.classList.remove(
-        "gift-hidden"
-      );
-
-
-      giftContent.classList.add(
-        "gift-visible"
-      );
-
-
-      createHearts();
-
-    }
-
-
-
-    /* =========================
-       COPY SPOTIFY CODE
-    ========================= */
-
-    function copyCode() {
-
-      const code =
-        document.getElementById(
-          "giftCode"
-        ).innerText;
-
-
-      navigator.clipboard
-        .writeText(code);
-
-
-      document.getElementById(
-        "copyMessage"
-      ).innerText =
-        "Copied ❤️";
-
-    }
-
-
-
-    /* =========================
-       HEART ANIMATION
-    ========================= */
-
-    function createHearts() {
-
-      const hearts = [
-        "❤️",
-        "💗",
-        "💕",
-        "🤍",
-        "💖"
-      ];
-
-
-      for (
-        let i = 0;
-        i < 35;
-        i++
-      ) {
-
-
-        setTimeout(() => {
-
-
-          const heart =
-            document.createElement(
-              "div"
-            );
-
-
-          heart.classList.add(
-            "floating-heart"
-          );
-
-
-          heart.innerText =
-            hearts[
-              Math.floor(
-                Math.random()
-                * hearts.length
-              )
-            ];
-
-
-          heart.style.left =
-            Math.random()
-            * 100
-            + "vw";
-
-
-          heart.style.fontSize =
-            (
-              Math.random()
-              * 20
-              + 15
-            )
-            + "px";
-
-
-          heart.style.animationDuration =
-            (
-              Math.random()
-              * 3
-              + 3
-            )
-            + "s";
-
-
-          document.body
-            .appendChild(heart);
-
-
-          setTimeout(() => {
-
-            heart.remove();
-
-          }, 6500);
-
-
-        }, i * 100);
-
-      }
-
-    }
-
-
-  </script>
-
-
+<div id="stage"><canvas id="game" aria-label="Хэлж Чадаагүй Үгс тоглоом"></canvas></div>
+<div id="ui">
+  <div id="hud"><span id="chName"></span><span id="dots"></span><button class="ibtn" id="soundBtn">♪ ДУУ</button></div>
+  <div id="prompt"><b>E</b><span id="promptT"></span></div>
+  <div id="dlg"><span id="who"></span><div id="txt"></div><div id="more">▼</div></div>
+  <div id="choice"><div id="cq"></div><div id="opts" style="display:contents"></div></div>
+  <div id="idle">Дээрх зураг дээр дарж алхаарай.<br><b style="color:#f2a7b8">✦</b> тэмдэгтэй зүйл, хүн дээр дарж харилцана.<span class="rot">Утсаа хэвтээ эргүүлбэл зураг томорно.</span></div>
+</div>
+
+<div id="card"><div id="cardIn">
+  <div class="tag">◆ СУДАЛГААНААС</div>
+  <h3 id="cardT"></h3><p id="cardP"></p><p class="why" id="cardW"></p><div class="cite" id="cardC"></div>
+  <button id="cardBtn">Үргэлжлүүлэх ▶</button>
+</div></div>
+
+<div id="titleCard"><div class="a" id="tcA"></div><div class="b" id="tcB"></div></div>
+<div id="toast"></div>
+
+<div class="ov show" id="intro">
+  <h1>ХЭЛЖ ЧАДААГҮЙ ҮГС</h1>
+  <div class="sub">Анужин охины тухай салаалсан өгүүлэмж</div>
+  <div class="small">Таны сонголт бүр Анужингийн ирээдүйг өөрчилнө. Сонголт бүрийн ард бодит сэтгэл судлалын судалгаа бий.</div>
+  <button class="big" id="startBtn">ЭХЛЭХ</button>
+  <div class="ctl" id="ctlText"></div>
+</div>
+
+<div class="ov" id="ending">
+  <h1 id="endT"></h1>
+  <div class="quote" id="endQ"></div>
+  <div class="sub" id="endS"></div>
+  <div id="summary"></div>
+  <div><button class="big" id="againBtn">ДАХИН ТОГЛОХ</button></div>
+  <div><button class="ghost" id="refsBtn">Ашигласан судалгаа</button></div>
+  <div id="help">Хэрэв танд ч хэлж чадаагүй үгс байвал итгэдэг хүндээ эсвэл мэргэжлийн хүнд хандаарай.<br><b>Сэтгэцийн эрүүл мэндийн зөвлөгөөний утас: 1800-2000</b> (24/7, үнэгүй)</div>
+</div>
+
+<div class="ov" id="refs">
+  <h2>Ашигласан судалгаа</h2>
+  <div class="list" id="refList"></div>
+  <button class="big" id="refsClose">ХААХ</button>
+</div>
+
+<script>
+(() => {
+'use strict';
+/* ============================================================
+   ҮНДСЭН ТОХИРГОО
+   ============================================================ */
+const W=320,H=180;
+const $=id=>document.getElementById(id);
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const stage=$('stage'),c=$('game'),x=c.getContext('2d');
+const buf=document.createElement('canvas');buf.width=W;buf.height=H;
+const g=buf.getContext('2d');
+const ui=$('ui');
+const isTouch=matchMedia('(hover:none)').matches||('ontouchstart' in window&&navigator.maxTouchPoints>0);
+if(isTouch)document.body.classList.add('touch');
+let portrait=false;
+const VIEW={w:320,h:180,x:0,y:0};
+
+function layout(){
+  const vw=window.innerWidth,vh=window.innerHeight;
+  portrait=vh>vw*1.1;
+  document.body.classList.toggle('portrait',portrait);
+  let w,h,l,t;
+  if(portrait){w=vw;h=Math.round(vw*9/16);l=0;t=0}
+  else{w=Math.min(vw,vh*16/9);h=Math.round(w*9/16);l=Math.round((vw-w)/2);t=Math.round((vh-h)/2)}
+  stage.style.cssText=`left:${l}px;top:${t}px;width:${w}px;height:${h}px`;
+  VIEW.w=portrait?240:320;VIEW.h=VIEW.w*9/16;VIEW.y=H-VIEW.h;VIEW.x=clamp(VIEW.x,0,W-VIEW.w);
+  const dpr=Math.min(2,window.devicePixelRatio||1);
+  c.width=Math.round(w*dpr);c.height=Math.round(h*dpr);
+  if(portrait){
+    ui.style.cssText=`left:0;top:${t+h}px;width:${vw}px;height:${vh-t-h}px`;
+    ui.style.setProperty('--f',Math.max(16,Math.min(21,vw*.046))+'px');
+  }else{
+    ui.style.cssText=`left:${l}px;top:${t}px;width:${w}px;height:${h}px`;
+    ui.style.setProperty('--f',Math.max(14,Math.min(25,h*.041))+'px');
+  }
+}
+addEventListener('resize',layout);addEventListener('orientationchange',()=>setTimeout(layout,200));layout();
+
+/* ============================================================
+   ӨНГӨ, ЗУРАХ ТУСЛАХ ФУНКЦУУД
+   ============================================================ */
+const R=(a,b,w,h,col)=>{g.fillStyle=col;g.fillRect(Math.round(a),Math.round(b),Math.round(w),Math.round(h))};
+const hex2=(h)=>[parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)];
+const shade=(h,k)=>{const [r,gg,b]=hex2(h);const f=v=>clamp(Math.round(k<0?v*(1+k):v+(255-v)*k),0,255).toString(16).padStart(2,'0');return '#'+f(r)+f(gg)+f(b)};
+const poly=(pts,col)=>{g.fillStyle=col;g.beginPath();g.moveTo(pts[0],pts[1]);for(let i=2;i<pts.length;i+=2)g.lineTo(pts[i],pts[i+1]);g.closePath();g.fill()};
+const glow=(cx,cy,r,col)=>{const gr=g.createRadialGradient(cx,cy,0,cx,cy,r);gr.addColorStop(0,col);gr.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=gr;g.fillRect(cx-r,cy-r,r*2,r*2)};
+const esc=s=>s.replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));
+
+/* ---------- Хүний дүрс (хөлийн цэгээс дээш зурна) ---------- */
+function person(px,py,o){
+  px=Math.round(px);py=Math.round(py);
+  const dir=o.dir||1,ht=o.h,child=!!o.child;
+  const headH=child?7:7,legH=child?Math.max(3,ht-headH-6):Math.max(5,ht-headH-9);
+  const torsoH=ht-headH-legH;
+  const walk=o.walk?Math.floor(o.walk)%2:0;
+  const br=o.breath||0;
+  const legTop=py-legH,torsoTop=legTop-torsoH+br,headTop=torsoTop-headH+(o.slouch||0);
+  const skin=o.skin||'#e2b196',hair=o.hair||'#2e2226',top=o.top,bot=o.bottom||'#3a3b44',shoe=o.shoe||'#24212a';
+  const tw=o.male?8:7,tl=px-(o.male?4:3);
+  g.fillStyle='rgba(0,0,0,.25)';g.fillRect(px-5,py-1,11,2);
+  // хөл
+  R(px-2,legTop,2,legH-(walk?1:0),bot);R(px+1,legTop,2,legH-(walk?0:1),bot);
+  R(px-3,py-1-(walk?1:0),3,1,shoe);R(px+1,py-1-(walk?0:1),3,1,shoe);
+  // их бие
+  R(tl,torsoTop,tw,torsoH,top);
+  if(o.dress){R(px-4,legTop-2,9,Math.min(4,legH),o.dress)}
+  if(o.skirt){R(px-4,legTop-1,9,3,o.skirt)}
+  if(o.collar){R(px-1,torsoTop,3,1,o.collar)}
+  // гар
+  const arm=shade(top,-.18);
+  R(tl-1,torsoTop+1,1,torsoH-2,arm);R(tl+tw,torsoTop+1,1,torsoH-2,arm);
+  R(tl-1,torsoTop+torsoH-1,1,1,skin);R(tl+tw,torsoTop+torsoH-1,1,1,skin);
+  if(o.hold){R(px+dir*3-1,torsoTop+3,3,3,o.hold)}
+  // толгой
+  R(px-3,headTop,7,headH,skin);
+  R(px-1,headTop+headH,3,1,shade(skin,-.15)); // хүзүү
+  const st=o.style||'long';
+  if(st==='long'||st==='pony'){
+    R(px-4,headTop-1,9,3,hair);R(px-4,headTop+1,2,headH+(child?2:5),hair);R(px+3,headTop+1,2,headH+(child?2:5),hair);
+    R(px-3,headTop+2,dir>0?2:4,1,hair);
+  }else if(st==='bob'){
+    R(px-4,headTop-1,9,3,hair);R(px-4,headTop+1,2,headH-1,hair);R(px+3,headTop+1,2,headH-1,hair);R(px-3,headTop+2,7,1,hair);
+  }else if(st==='bun'){
+    R(px-4,headTop-1,9,3,hair);R(px-1,headTop-3,3,2,hair);R(dir>0?px-4:px+3,headTop+1,2,4,hair);
+  }else{ // short
+    R(px-3,headTop-1,7,2,hair);R(dir>0?px-3:px+3,headTop+1,1,3,hair);R(px-3,headTop+1,7,1,hair);
+  }
+  if(st==='pony'){R(px-6,headTop+1,2,4,hair);R(px+5,headTop+1,2,4,hair);R(px-5,headTop+1,1,1,'#f3b25f');R(px+5,headTop+1,1,1,'#f3b25f')}
+  if(o.clip){R(px+1,headTop,2,1,o.clip)}
+  // нүд
+  const ey=headTop+(child?4:4),ex=dir>0?1:0;
+  R(px-2+ex,ey,1,1,'#231d22');R(px+1+ex,ey,1,1,'#231d22');
+  if(o.blush){R(px-2+ex,ey+1,1,1,'#f0a0a0');R(px+2+ex,ey+1,1,1,'#f0a0a0')}
+  if(o.sad){R(px-2+ex,ey-1,1,1,shade(skin,-.25));R(px+1+ex,ey-1,1,1,shade(skin,-.25))}
+}
+
+/* ============================================================
+   ТОГЛООМЫН ТӨЛӨВ
+   ============================================================ */
+const S={started:false,ch:0,mode:'intro',choices:{},order:[],seen:new Set(),resolved:0,fade:1,fadeTarget:1,fadeSpeed:1.3,fadeRes:null,t:0,ending:null};
+const P={x:40,y:150,dir:1,tx:null,ty:null,pending:null,walk:0,moving:false};
+let near=null,particles=[],keys=new Set(),taps=[];
+const isOpen=id=>S.choices[id]===true;
+const openCount=()=>Object.values(S.choices).filter(Boolean).length;
+const WALK={x0:10,x1:310,y0:133,y1:168};
+
+/* ============================================================
+   СУДАЛГААНЫ КАРТУУД
+   ============================================================ */
+const CARDS={
+ grych:{t:'Хүүхэд хэрүүлийг хэрхэн ойлгодог вэ',p:'Эцэг эхийн хэрүүл хүүхдэд хэрхэн нөлөөлөх нь хүүхэд түүнийг юу гэж тайлбарлаж байгаагаас ихээхэн хамаардаг. “Аюултай байна”, “Би буруутай” гэж боддог хүүхдэд айдас, гуниг зэрэг дотогшоо чиглэсэн хүндрэл илүү их үүсдэг.',c:'Grych & Fincham, 1990; Grych, Fincham, Jouriles & McDonald, 2000'},
+ amato:{t:'Салалт уу, салалтын дараах харилцаа уу',p:'Олон арван судалгааны нэгтгэлээр салалтын хүүхдэд үзүүлэх нөлөө дунджаар бага хэмжээтэй гарсан бөгөөд эцэг эхийн зөрчил, хүүхэд хоёр эцэг эхтэйгээ хэр дотно үлдсэн нь илүү чухал байв. Тусдаа амьдардаг аавтай уулзсан тоо биш, харилцааны дулаан, дотно байдал нь хүүхдийн сайн сайхан байдалтай холбоотой.',c:'Amato, 2001; Amato & Gilbreth, 1999'},
+ gross:{t:'Нуусан мэдрэмжийн нийгмийн үнэ',p:'Сэтгэл хөдлөлөө байнга дарж нуудаг хүмүүс бусдаас бага дэмжлэг авч, бусадтай ойр дотно байдал нь сул, харилцаандаа сэтгэл ханамж багатай байдаг. Их сургуульд орж буй оюутнуудыг дагасан судалгаагаар энэ нөлөө цаг хугацааны явцад хуримтлагддаг нь харагдсан.',c:'Gross & John, 2003; Srivastava, Tamir, McGonigal, John & Gross, 2009'},
+ butler:{t:'Чимээгүй байдал хоёр хүнд хоёуланд нь хүнд',p:'Хоёр хүн ярилцах туршилтад сэтгэл хөдлөлөө дарсан хүний ярилцагч нь харилцаандаа ойр дотно байдал бага мэдэрч, цусны даралт нь илүү өссөн. Өөрөөр хэлбэл нуусан мэдрэмж нөгөө хүнд ч стресс болдог.',c:'Butler, Egloff, Wilhelm, Smith, Erickson & Gross, 2003'},
+ help:{t:'Тусламж хүсэхэд юу саад болдог вэ',p:'Залуучууд тусламж хүсэхэд “өөрөө даах ёстой” гэх бодол, ичгүүр хамгийн том саад болдог. Харин найдаж болох хүн байна гэж мэдрэх нь стрессийн сөрөг нөлөөг “дэрлэж”, зөөллөдөг.',c:'Rickwood, Deane, Wilson & Ciarrochi, 2005; Cohen & Wills, 1985'},
+ lieberman:{t:'Мэдрэмжээ нэрлэх нь тархинд нөлөөлдөг',p:'Мэдрэмжээ үгээр нэрлэх (“Би айж байна”) үед тархины айдас, аюулыг хариуцдаг бүйлсэн булчирхайн (амигдала) идэвх буурдаг. Энгийн мэт санагдах энэ алхам сэтгэл хөдлөлөө зохицуулах эхлэл болдог.',c:'Lieberman et al., 2007'},
+ penne:{t:'Бичих нь ачааг хөнгөлдөг',p:'Хүнд туршлагынхаа тухай бодол, мэдрэмжээ хэдэн өдөр дараалан бичсэн оюутнууд дараагийн саруудад эмнэлэгт цөөн хандсан. Нуусан зүйлээ үгэнд буулгах нь бие, сэтгэлийн ачааг хөнгөлдөг.',c:'Pennebaker & Beall, 1986'},
+ roisman:{t:'“Олж авсан” аюулгүй байдал',p:'Бага насандаа аюулгүй бус хавсралттай өссөн хүн ч эргэцүүлэл, дэмжлэг үзүүлдэг харилцаагаар насанд хүрээд “олж авсан аюулгүй” хавсралттай болж чаддаг. Ийм хүмүүс ойр дотно харилцаандаа амжилттай байдгийг 20 гаруй жилийн дагалт судалгаа харуулсан.',c:'Roisman, Padrón, Sroufe & Egeland, 2002'},
+ english:{t:'Нуух зуршил цаг хугацааны явцад',p:'Оюутнуудыг дөрвөн жил дагасан судалгаагаар сэтгэл хөдлөлөө дарж нуудаг хүмүүсийн бусадтай ойр дотно байдал жил ирэх тусам буурсан. Гэхдээ энэ бол хувь тавилан биш: хүн ямар ч насандаа нээлттэй байж сурч чаддаг.',c:'English, John, Srivastava & Gross, 2012; Roisman et al., 2002'}
+};
+const REFS=[
+ 'Amato, P. R. (2001). Children of divorce in the 1990s: An update of the Amato and Keith (1991) meta-analysis. <i>Journal of Family Psychology, 15</i>(3), 355–370.',
+ 'Amato, P. R., & Gilbreth, J. G. (1999). Nonresident fathers and children’s well-being: A meta-analysis. <i>Journal of Marriage and the Family, 61</i>(3), 557–573.',
+ 'Butler, E. A., Egloff, B., Wilhelm, F. H., Smith, N. C., Erickson, E. A., & Gross, J. J. (2003). The social consequences of expressive suppression. <i>Emotion, 3</i>(1), 48–67.',
+ 'Cohen, S., & Wills, T. A. (1985). Stress, social support, and the buffering hypothesis. <i>Psychological Bulletin, 98</i>(2), 310–357.',
+ 'English, T., John, O. P., Srivastava, S., & Gross, J. J. (2012). Emotion regulation and peer-rated social functioning: A 4-year longitudinal study. <i>Journal of Research in Personality, 46</i>(6), 780–784.',
+ 'Gross, J. J., & John, O. P. (2003). Individual differences in two emotion regulation processes: Implications for affect, relationships, and well-being. <i>Journal of Personality and Social Psychology, 85</i>(2), 348–362.',
+ 'Grych, J. H., & Fincham, F. D. (1990). Marital conflict and children’s adjustment: A cognitive-contextual framework. <i>Psychological Bulletin, 108</i>(2), 267–290.',
+ 'Grych, J. H., Fincham, F. D., Jouriles, E. N., & McDonald, R. (2000). Interparental conflict and child adjustment: Testing the mediational role of appraisals in the cognitive-contextual framework. <i>Child Development, 71</i>(6), 1648–1661.',
+ 'Lieberman, M. D., Eisenberger, N. I., Crockett, M. J., Tom, S. M., Pfeifer, J. H., & Way, B. M. (2007). Putting feelings into words: Affect labeling disrupts amygdala activity in response to affective stimuli. <i>Psychological Science, 18</i>(5), 421–428.',
+ 'Pennebaker, J. W., & Beall, S. K. (1986). Confronting a traumatic event: Toward an understanding of inhibition and disease. <i>Journal of Abnormal Psychology, 95</i>(3), 274–281.',
+ 'Rickwood, D., Deane, F. P., Wilson, C. J., & Ciarrochi, J. (2005). Young people’s help-seeking for mental health problems. <i>Australian e-Journal for the Advancement of Mental Health, 4</i>(3), 218–251.',
+ 'Roisman, G. I., Padrón, E., Sroufe, L. A., & Egeland, B. (2002). Earned-secure attachment status in retrospect and prospect. <i>Child Development, 73</i>(4), 1204–1219.',
+ 'Srivastava, S., Tamir, M., McGonigal, K. M., John, O. P., & Gross, J. J. (2009). The social costs of emotional suppression: A prospective study of the transition to college. <i>Journal of Personality and Social Psychology, 96</i>(4), 883–897.'
+];
+
+/* ============================================================
+   СОНГОЛТУУД
+   ============================================================ */
+const CHOICES={
+ c1:{label:'7 нас — айдсаа хэлэх',q:'Хоолой улам чангарна. Анужин яах вэ?',card:'grych',opts:[
+  {open:false,t:'Өрөөндөө гүйж ороод, чихээ таглан зургаа үргэлжлүүлж зурна',
+   after:['Хаалганы цаанаас хоолой сонсогдсоор.','Анужин нарыг улам томоор, улам шараар будна.','Анужин|“Би сайн охин байвал тэд хэрэлдэхгүй байх...”','Долоон настай хүүхэд өөрийгөө хамгаалах цорын ганц аргаа сонгосон юм. Энэ түүний буруу биш.'],
+   why:'Анужин хэнд ч хэлээгүй тул “Би буруутай” гэсэн тайлбар нь хэн ч засаагүй хэвээр үлдэв.'},
+  {open:true,t:'Ээж рүүгээ очоод “Та нар яагаад хэрэлдээд байгаа юм? Би айж байна” гэж хэлнэ',
+   after:['Ээж нь гэнэт дуугаа хураагаад, Анужингийн өмнө өвдөг сөгдөв.','Ээж|“Уучлаарай, миний охин. Энэ чиний буруу биш шүү. Том хүмүүсийн асуудал.”','Аав ч ирээд хоёуланг нь тэврэв.','Асуудал алга болоогүй. Гэхдээ Анужин айдсаа ганцаараа үүрээгүй.'],
+   why:'Ээж нь “Чиний буруу биш” гэж хэлсэн нь Анужинд өөрийгөө буруутгахгүй байх тайлбар өгсөн.'}]},
+ c2:{label:'8 нас — санахаа хэлэх',q:'Аав хариу хүлээн зогсоно. Анужин юу гэх вэ?',card:'amato',opts:[
+  {open:false,t:'Инээмсэглээд “Зүгээр ээ, аав аа. Би зүгээр” гэнэ',
+   after:['Аав тайвширсан мэт толгой дохиод гарч явав.','Хаалга хаагдахад Анужин толины өмнө очиж нүдээ арчив.','Анужин|“Би зүгээр.”','Тэр өдөр энэ хоёр үг анх удаа нуувч болсон юм.'],
+   why:'“Зүгээр ээ” гэсэн нь аавыг тайвшруулсан ч, Анужин аавдаа юу хэрэгтэй байгаагаа хэлж сурсангүй.'},
+  {open:true,t:'Аавынхаа хүрэмнээс зуурч “Би чамайг санана. Ням гараг бүр ирээрэй” гэнэ',
+   after:['Аав хэсэг дуугүй зогсоод, охиноо чанга тэврэв.','Аав|“Ням гараг бүр. Аав нь амлая.”','Тэр амлалтаа бүгдийг нь биелүүлж чадаагүй. Гэхдээ ихэнхийг нь биелүүлсэн.'],
+   why:'Санаж байгаагаа хэлсэн нь аав охин хоёрын харилцааг салалтын дараа ч амьд байлгах гүүр болов.'}]},
+ c3:{label:'15 нас — найздаа нээгдэх',q:'Солонго хариуг нь хүлээж байна.',card:'gross',opts:[
+  {open:false,t:'Инээгээд “Юу ч болоогүй ээ. Битгий санаа зов” гэнэ',
+   after:['Солонго|“За... тэгвэл зүгээр.”','Тэд өмнөх шигээ хамт суудаг хэвээр. Гэвч тэр өдрөөс хойш хоёрын хооронд үл үзэгдэх хана босов.'],
+   why:'Анужин найзаа санаа зовоохгүйн тулд нуусан ч, тэр нуусан зүйл нь хоёрын хооронд хана болов.'},
+  {open:true,t:'“Ээж аав минь салсан. Энэ тухай хэнд ч яриагүй л юм” гэж хэлнэ',
+   after:['Солонго гайхсангүй. Харин хэсэг чимээгүй байснаа хэлэв:','Солонго|“Миний ээж аав ч бас салсан. Би ч хэнд ч хэлж байгаагүй.”','Тэр өдөр хоёулаа хичээлийн дараа харанхуй болтол ярилцав.'],
+   why:'Анужин нээгдэхэд Солонго ч бас нээгдэв. Нээлттэй байдал ихэвчлэн харилцан байдаг.'}]},
+ c4:{label:'19 нас — айдсаа нэрлэх',q:'Анужингийн дотор олон үг эргэлдэнэ.',card:'butler',opts:[
+  {open:false,t:'Нүүрээ буруулаад “Юу ч болоогүй. Би зүгээр ядарсан” гэнэ',
+   after:['Тэмүүлэн хэсэг хүлээснээ санаа алдаад, хөрсөн цайгаа ууна.','Өрөөнд зөвхөн борооны чимээ.','Тэд нэг ширээнд сууж байсан ч хоорондоо маш хол байв.'],
+   why:'Тэмүүлэн хүлээсээр үлдэв. Анужингийн чимээгүй байдал тайван биш, хоёуланд нь дарамт болов.'},
+  {open:true,t:'“Чамайг ирэхгүй болохоор аав шиг явчих юм шиг санагдсан. Би айсан” гэнэ',
+   after:['Тэмүүлэн гайхан харснаа гарыг нь атгав.','Тэмүүлэн|“Би явахгүй. Хоцрох бүртээ заавал залгаж хэлье.”','Анужин айдсаа анх удаа чангаар нэрлэхэд, тэр айдас бага зэрэг жижгэрэх шиг болов.'],
+   why:'Анужин айдсаа нэрлэхэд Тэмүүлэн түүнд юу хэрэгтэйг ойлгосон.'}]},
+ c5:{label:'20 нас — тусламж хүсэх',q:'Солонгын зурвас дээр курсор анивчина.',card:'help',opts:[
+  {open:false,t:'Зурвасыг уншаад, хариу бичилгүй утсаа доош харуулан тавина',
+   after:['Утасны гэрэл унтрав. Өрөө дахин харанхуй болов.','Анужин|“Би өөрөө даана. Үргэлж л тэгдэг шүү дээ.”'],
+   why:'Дэмжлэг ойрхон байсан ч, хүлээж авахгүй бол тус болж чаддаггүй.'},
+  {open:true,t:'“Үнэндээ надад хэцүү байна. Маргааш уулзаж болох уу?” гэж бичнэ',
+   after:['Анужин гурван удаа бичиж, гурван удаа устгав. Дөрөв дэх удаад нь илгээв.','Хариу хэдхэн секундэд ирэв.','Солонго|“Мэдээж! Би энд байна.”'],
+   why:'Ганцхан өгүүлбэр: “Надад хэцүү байна.” Тусламж хүсэх нь сул дорой байдал биш, ур чадвар юм.'}]},
+ c6:{label:'Шөнө — бичиж, хуваалцах',q:'Шөнө дунд. Анужин юу хийх вэ?',card:'penne',opts:[
+  {open:false,t:'Гэрлээ унтрааж, “маргааш бодъё” гээд бүгдийг дотроо үлдээнэ',
+   after:()=>['c1','c2','c3','c4','c5'].filter(isOpen).length>=4
+     ?['Анужин гэрлээ унтраав.','Гэвч харанхуйд хэвтэхэд олон жилийн турш хүмүүсийн түүнд хэлж байсан үгс нэг нэгээрээ санаанд нь орж ирэв.','Анужин|“Би ганцаараа биш шүү дээ...”']
+     :['Харанхуйд бүх зүйл намжив.','Гэвч маргааш ч, нөгөөдөр ч тэр “маргааш” ирсэнгүй.'],
+   why:'Нуух нь тухайн мөчид хялбар санагдах ч, хэлээгүй үгс дотор хуримтлагдсаар байдаг.'},
+  {open:true,t:'Мэдрэмжээ дэвтэртээ бичээд, өглөө Солонго руу залгахаар шийднэ',
+   after:['Анужин бичиж эхлэв. Эхний өгүүлбэр хамгийн хэцүү нь байлаа:','Анужин|“Би зүгээр биш.”','Дараагийнх нь арай амархан байв.'],
+   why:'Хамгийн хэцүү нь эхний өгүүлбэр байдаг. Түүнийг бичсэнээр бусад нь араас нь урсаж эхэлнэ.'}]}
+};
+const CH_ORDER=['c1','c2','c3','c4','c5','c6'];
+
+async function choicePoint(id){
+  const d=CHOICES[id];
+  const order=Math.random()<.5?[0,1]:[1,0];
+  const k=order[await choose(d.q,order.map(i=>d.opts[i].t))];
+  const o=d.opts[k];
+  S.choices[id]=o.open;S.order.push(id);
+  sfx(o.open?'open':'closed');
+  burst(P.x,P.y-14,o.open?'#ffcf7a':'#8f8a98',22);
+  updateDots();updateGrade();
+  await say(o.after);
+  await card(CARDS[d.card],o.why);
+}
+
+/* ============================================================
+   БҮЛГҮҮД (өрөө, объект, үйл явдал)
+   ============================================================ */
+const ANU=[ // Анужингийн гадаад төрх насаар
+ {h:15,child:true,style:'pony',top:'#ff7f9a',bottom:'#f6e1c8',skirt:'#f3b25f',blush:true},
+ {h:16,child:true,style:'long',top:'#9a8c94',bottom:'#5f6070',skirt:'#6d6b78'},
+ {h:21,style:'long',top:'#2f3c5c',bottom:'#2f3c5c',skirt:'#2f3c5c',collar:'#f2f2f2'},
+ {h:22,style:'long',top:'#8a7894',bottom:'#3d4a66'},
+ {h:22,style:'long',top:'#55565f',bottom:'#34353d',slouch:1,sad:true},
+ {h:22,style:'long',top:'#55565f',bottom:'#34353d'},
+ {h:22,style:'long',top:'#e7869b',bottom:'#5d5276',clip:'#ffd0dc'},
+ {h:22,style:'long',top:'#4a4b52',bottom:'#34353d',slouch:1,sad:true}
+];
+
+const CH=[
+/* ---------------- 0. 7 НАС ---------------- */
+{name:'7 НАС — ДУЛААН ГЭР',a:'7 НАС',b:'Дулаан гэр',sat:1.08,mood:0,spawn:[44,150],
+ intro:()=>['Энэ бол Анужингийн түүх.','Зарим дурсамж бусдаасаа илүү удаан өнгөө хадгалдаг. Энэ бол тийм нэгэн өдөр.'],
+ bg:roomLiving,fg:fgLiving,
+ objects:[
+  {id:'drawing',label:'Зураг',hit:[70,104,30,12],at:[86,136],lines:['Анужин гэр бүлээ зуржээ: ээж, аав, өөрөө, бас асар том нар.','Ээж|“Нараа ямар том зурчихаа вэ?”','Аав|“Том байг л дээ. Яг л манай гэр шиг гэрэлтэй.”','Тэр үед Анужинд энэ дулаан үүрд үргэлжлэх юм шиг санагддаг байв.']},
+  {id:'rabbit',label:'Туулай',hit:[108,98,14,14],at:[118,136],lines:['Нэг чих нь сэмэрсэн хөвөн туулай.','Анужин айсан үедээ үүнийг чанга тэвэрдэг. Туулай хэнд ч юу ч хэлдэггүй. Тийм болохоор аюулгүй.']},
+  {id:'photo',label:'Хүрээтэй зураг',hit:[126,36,34,26],at:[142,136],lines:['Цаасан шувуу хөөргөж буй гурван хүн. Гурвуулаа инээж байна.','Энэ зургийг хэн авсныг Анужин санахгүй. Харин тэр өдрийн салхийг одоо ч санадаг.']},
+  {id:'parents',label:'Гал тогоо',trigger:true,needs:['drawing'],hit:[238,92,54,38],at:[262,138],
+   notReady:['Гал тогооноос ээж, аавын намуухан хоолой сонсогдоно.','Анужин эхлээд ширээн дээрх зураг руугаа очив.'],
+   draw:t=>{const b=Math.floor(t*1.3)%2;person(254,127,{h:22,style:'bun',top:'#c46a7c',dress:'#b35b6d',dir:1,breath:b});person(276,127,{h:24,style:'short',male:true,top:'#4b6a8a',bottom:'#3a3d45',hair:'#1f1a1c',dir:-1,breath:1-b})},
+   run:async()=>{
+    await say(['Ээж|“Ингэж цааш явах боломжгүй. Бид бие биенээ сонсохоо больсон.”','Аав|“Хүүхдийн дэргэд битгий...”','Ээж|“Үргэлж л “хүүхдийн дэргэд”! Тэгвэл хэзээ ярих юм бэ?”','Аяга ширээн дээр хүчтэй тавигдав. Гэр дотор гэнэт хүйтэн болов.']);
+    await choicePoint('c1');await goChapter(1);}}
+ ]},
+/* ---------------- 1. 8 НАС ---------------- */
+{name:'8 НАС — ХАЙРЦАГ',a:'8 НАС',b:'Аавын хайрцаг',sat:.62,mood:1,spawn:[30,152],
+ intro:()=>['Нэг жилийн дараа.','Ээж, аав хоёр салахаар шийджээ.',isOpen('c1')?'Ээж нь “Энэ чиний буруу биш” гэж дахин дахин хэлдэг. Анужин итгэхийг хичээнэ.':'Хэн ч Анужинд “яагаад” гэдгийг тайлбарлаагүй. Анужин ч асуугаагүй.'],
+ bg:roomHall,fg:fgHall,
+ objects:[
+  {id:'box',label:'Хайрцаг',hit:[184,90,30,38],at:[198,138],lines:['Аавын ном, аяга, цүнх... бас Анужингийн зурсан тэр нартай зураг.','Аав зургийг авч явах гэж байгаа юм байна.','Анужин|“Яагаад явж байгаа юм бэ?”','Энэ асуулт хоолойд нь гацаад гарсангүй.']},
+  {id:'phone',label:'Суурин утас',hit:[114,98,34,30],at:[130,138],lines:['Энэ утас дуугарахад аав үргэлж “Би авъя!” гээд гүйдэг байв.','Одоо хэн гүйх бол?']},
+  {id:'mirror',label:'Толь',hit:[48,50,26,54],at:[60,138],lines:['Толинд нүд нь улайсан жаахан охин харагдана.','Анужин инээмсэглэж үзэв. Инээмсэглэл нь бусдад үнэмшилтэй харагдах ёстой.']},
+  {id:'dad',label:'Аав',trigger:true,needs:['box'],hit:[246,108,22,30],at:[242,144],
+   notReady:['Аав хаалганы дэргэд гутлаа өмсөж байна.','Анужин түүн рүү шууд очиж зүрхэлсэнгүй.'],
+   draw:t=>person(256,140,{h:24,style:'short',male:true,top:'#2f3d55',bottom:'#3a3d45',hair:'#1f1a1c',dir:-1,breath:Math.floor(t)%2,sad:true})
+   ,run:async()=>{
+    await say(['Аав|“Анужин аа...”','Аав|“Аав нь өөр байранд амьдарна. Гэхдээ чамайг хайрлах минь өөрчлөгдөхгүй.”','Аав|“Чи аавдаа юу ч хэлж болно шүү. Юу ч.”']);
+    await choicePoint('c2');await goChapter(2);}}
+ ]},
+/* ---------------- 2. 15 НАС ---------------- */
+{name:'15 НАС — СУРГУУЛЬ',a:'15 НАС',b:'Үл үзэгдэх хана',sat:.55,mood:2,spawn:[24,152],
+ intro:()=>['Долоон жил өнгөрөв.','Анужин сайн сурдаг, хэнд ч төвөг удахгүй, үргэлж “зүгээр” байдаг охин болжээ.',openCount()>0?'Гэртээ заримдаа ярьдаг ч, найз нөхөддөө гэр бүлийнхээ тухай хэзээ ч хэлж байгаагүй.':'Гаднаас нь харахад бүх зүйл хэвийн. Харин дотор нь хэн ч орж үзээгүй өрөө бий.'],
+ bg:roomSchool,fg:fgSchool,
+ objects:[
+  {id:'notebook',label:'Нууц дэвтэр',hit:[86,100,36,24],at:[104,138],lines:['Анужин энд шүлэг бичдэг. Хэнд ч үзүүлж байгаагүй.','“Дотор минь нэг өрөө бий. Хаалга нь дотроосоо түгжээтэй.”']},
+  {id:'board',label:'Зарын самбар',hit:[138,38,50,40],at:[163,136],lines:['“Сэтгэл зүйчийн өрөө — 204 тоот. Ярилцмаар байвал хаалга үргэлж нээлттэй.”','Анужин тэр хаалганы өмнүүр олон удаа өнгөрсөн. Ганц ч удаа тогшоогүй.']},
+  {id:'solongo',label:'Солонго',trigger:true,needs:['notebook'],hit:[266,104,22,34],at:[262,146],
+   notReady:['Солонго түүн рүү харж байна.','Анужин харцаа буруулаад, ширээн дээрх дэвтэр рүүгээ очив.'],
+   draw:t=>person(276,140,{h:21,style:'bob',hair:'#4a2e22',top:'#2f3c5c',skirt:'#2f3c5c',bottom:'#2f3c5c',collar:'#f2f2f2',dir:-1,breath:Math.floor(t*.8)%2}),
+   run:async()=>{
+    await say(['Солонго|“Анужин, нэг юм асууж болох уу?”','Солонго|“Чи сүүлийн үед огт инээхгүй болчихлоо. Гэртээ ямар нэг юм болсон уу?”']);
+    await choicePoint('c3');await goChapter(3);}}
+ ]},
+/* ---------------- 3. 19 НАС ---------------- */
+{name:'19 НАС — ХАЙР',a:'19 НАС',b:'Хөрсөн цай',sat:.6,mood:2.2,rain:true,spawn:[130,150],
+ intro:()=>['Анужин их сургуульд орж, Тэмүүлэнтэй танилцав.','Тэмүүлэн түүнийг инээлгэж чаддаг цөөхөн хүний нэг.','Гэвч ойртох тусам Анужингийн дотор нэгэн хуучин айдас сэрж эхэлсэн:','Анужин|“Хайртай хүмүүс эцэстээ явчихдаг.”'],
+ bg:roomCafe,fg:fgCafe,
+ objects:[
+  {id:'cups',label:'Хоёр аяга цай',hit:[148,96,52,20],at:[174,138],lines:['Анужин энд нэг цаг хүлээжээ. Тэмүүлэн утсаа ч авсангүй.','Цай нь аль хэдийн хөрчихөж.'],after:async()=>{if(!S.flagBell){S.flagBell=true;sfx('bell');await say(['Кафены хаалганы хонх жингэнэв.'])}}},
+  {id:'window',label:'Бороотой цонх',hit:[14,26,96,76],at:[62,138],lines:()=>['Бороо цонхыг даган урсана.',isOpen('c2')?'Ням гараг бүр аав ирдэг байсан. Гэхдээ ирээгүй тэр цөөхөн өдөр л хамгийн тод үлдсэн.':'Аав ирэх эсэхийг Анужин хэзээ ч асууж байгаагүй. Тиймээс хүлээж байгаагаа ч хэлж байгаагүй.']},
+  {id:'temuulen',label:'Тэмүүлэн',trigger:true,needs:['cups'],show:()=>S.seen.has('cups'),hit:[264,104,24,36],at:[258,148],
+   draw:t=>person(276,142,{h:23,style:'short',male:true,top:'#3f6b5c',bottom:'#2e3440',hair:'#18141a',dir:-1,breath:Math.floor(t)%2}),
+   run:async()=>{
+    await say(['Тэмүүлэн|“Уучлаарай! Утас минь цэнэггүй болоод, хурал сунжирчихлаа.”','Анужин юу ч хэлсэнгүй. Дотор нь уур, гомдол, айдас нэг дор буцалж байв.','Тэмүүлэн|“Чи уурласан уу? Юу бодож байгаагаа надад хэлээч. Би ойлгомоор байна.”']);
+    await choicePoint('c4');await goChapter(4);}}
+ ]},
+/* ---------------- 4. 20 НАС ---------------- */
+{name:'20 НАС — ХАРИУЛААГҮЙ ЗУРВАС',a:'20 НАС',b:'Хариулаагүй зурвас',sat:.4,mood:3,spawn:[226,152],
+ intro:()=>['Дахин нэг жил өнгөрөв. Хүнд семестр.','Шалгалт, цагийн ажил, ээжийн ганцаардал, аавын шинэ гэр бүл... Бүгд нэг дор.','Анужин гэртээ ирээд гэрлээ асаасангүй.'],
+ bg:()=>roomFlat('night'),fg:()=>fgFlat('night'),
+ objects:[
+  {id:'window',label:'Шөнийн хот',hit:[194,28,68,66],at:[228,138],lines:['Олон мянган цонх гэрэлтэнэ. Тэр болгоны цаана хэн нэгэн байгаа.','Гэсэн мөртлөө Анужинд дэлхий дээр ганцаараа үлдсэн юм шиг санагдав.']},
+  {id:'drawing',label:'Хуучин зураг',hit:[136,52,24,18],at:[148,138],lines:['Ээжийн хадгалж байсан бага насны тэр зураг. Анужин хананд наажээ.','Шар нар нь одоо ч гэрэлтэй хэвээр.']},
+  {id:'mirror',label:'Толь',hit:[94,50,22,64],at:[104,138],lines:['Толинд ядарсан эмэгтэй харагдана.','Анужин|“Би зүгээр.”','Энэ үг өмнөх шигээ итгэл төрүүлэхгүй болжээ.']},
+  {id:'phone',label:'Утас',trigger:true,needs:['window'],hit:[156,94,20,16],at:[166,138],
+   notReady:['Утас чичирлээ. Анужин тэр даруй харж зүрхэлсэнгүй.','Цонхны дэргэд хэсэг зогсмоор санагдав.'],
+   run:async()=>{
+    await say(['Дэлгэцэн дээр хэдэн зурвас ирсэн байна.',
+     isOpen('c2')?'Аав|“Охин минь, ням гаригт цай уух уу? Чамайг санаж байна.”':'Аав|“Сайн уу, охин минь. Хичээл яаж байна?”',
+     isOpen('c2')?null:'Аавын хариу өгөөгүй гурав дахь зурвас.',
+     isOpen('c4')?'Тэмүүлэн|“Хэцүү өдөр байсан уу? Би чамайг сонсоход бэлэн.”':'Тэмүүлэн|“Сүүлийн үед чи надаас холдоод байх шиг. Би юм буруу хийсэн үү?”',
+     isOpen('c3')?'Солонго|“Өнөөдөр чи их ядарсан харагдсан. Яримаар байвал би байгаа шүү, ямар ч цагт.”':'Солонго|“Сайн уу, удлаа шүү. Зүгээр биз дээ?”',
+     'Анужингийн хуруу дэлгэц дээр удаан зогсов.']);
+    await choicePoint('c5');await goChapter(5);}}
+ ]},
+/* ---------------- 5. ДОТООД ӨРӨӨ ---------------- */
+{name:'ӨНӨӨ ШӨНӨ — ДОТООД ӨРӨӨ',a:'ӨНӨӨ ШӨНӨ',b:'Дотоод өрөө',sat:.35,mood:3,mind:true,spawn:[160,166],
+ intro:()=>['Анужин орон дээрээ хэвтээд нүдээ анив.','Хэлж чадаагүй бүх үгс нь нэгэн өрөөнд цугларчээ.','Тэднийг нэг нэгээр нь нэрлэх цаг болжээ.'],
+ bg:roomMind,fg:fgMind,
+ objects:[
+  {id:'n1',label:'Айдас',node:'АЙДАС',hit:[28,104,32,36],at:[44,140],lines:['Хаалганы цаанаас хэрүүл сонсож буй долоон настай охин.','Анужин|“Би айж байсан. Одоо ч заримдаа айдаг.”'],after:nodeDone},
+  {id:'n2',label:'Үгүйлэл',node:'ҮГҮЙЛЭЛ',hit:[260,104,32,36],at:[276,140],lines:['Аавын хайрцаг. Хаагдах хаалга.','Анужин|“Би аавыгаа, бас бид гурвыг санадаг. Санах нь сул дорой гэсэн үг биш.”'],after:nodeDone},
+  {id:'n3',label:'Гомдол',node:'ГОМДОЛ',hit:[80,128,32,36],at:[96,164],lines:['Хөрсөн цай. Утсаа авахгүй байгаа хүн.','Анужин|“Би гомдсон. Уурын минь цаана “намайг орхих вий” гэсэн айдас нуугдаж байсан.”'],after:nodeDone},
+  {id:'n4',label:'Ганцаардал',node:'ГАНЦААРДАЛ',hit:[208,128,32,36],at:[224,164],lines:['Хариулаагүй зурвасууд.','Анужин|“Би бүгдийг ганцаараа даах ёстой гэж боддог байсан. Гэхдээ надад хүмүүс хэрэгтэй.”'],after:nodeDone},
+  {id:'desk',label:'Ширээ',trigger:true,needs:['n1','n2','n3','n4'],hit:[144,108,34,32],at:[160,146],
+   notReady:['Өрөөний голд ширээ, сандал байна.','Гэвч эргэн тойронд нэрлээгүй мэдрэмжүүд одоо ч гэрэлтсээр.'],
+   run:async()=>{
+    await say(['Шөнө дунд болжээ.','Ширээн дээр нууц дэвтэр, утас хоёр байна.']);
+    await choicePoint('c6');
+    const score=['c1','c2','c3','c4','c5'].filter(isOpen).length+(isOpen('c6')?2:0);
+    await goChapter(score>=4?6:7);}}
+ ]},
+/* ---------------- 6. САЙН ТӨГСГӨЛ ---------------- */
+{name:'ӨГЛӨӨ',a:'ӨГЛӨӨ',b:'Нээлттэй цонх',sat:1.05,mood:4,spawn:[40,152],
+ intro:()=>['Өглөө болов.','Нэг шөнийн дотор бүх зүйл засагдсангүй. Ээж аав нь эргэж нийлээгүй, хүнд семестр ч дуусаагүй.','Гэхдээ Анужин өөрөөсөө зугтаахын оронд өөрийгөө сонсож эхлэв.'],
+ bg:()=>roomFlat('morning'),fg:()=>fgFlat('morning'),
+ objects:[
+  {id:'mirror',label:'Толь',hit:[94,50,22,64],at:[104,138],lines:['Толинд ядарсан ч нүд нь гэрэлтэй эмэгтэй харагдана.','Анужин|“Өглөөний мэнд. Би чамайг сонсож байна.”']},
+  {id:'phone',label:'Утас',hit:[156,94,20,16],at:[166,138],lines:()=>['Солонго|“Мэдээж уулзана! 12 цагт бидний дуртай кафед.”',isOpen('c4')?'Тэмүүлэн|“Чи надад айдсаа хэлдэг болсонд баярлалаа. Би хаашаа ч явахгүй.”':'Тэмүүлэн|“Надтай ярихад бэлэн болсон үедээ хэлээрэй. Би хүлээнэ.”',isOpen('c2')?'Аав|“Ням гаригт уулзана шүү, охин минь.”':'Анужин аав руугаа бичив: “Аав аа, ням гаригт цай уух уу?” Олон жилийн дараа анх удаа.']},
+  {id:'door',label:'Гадагш гарах',trigger:true,needs:['phone'],hit:[280,54,30,76],at:[288,140],
+   notReady:['Гарахаасаа өмнө Анужин утсаа шалгахаар шийдэв.'],
+   run:async()=>{
+    await say(['Анужин амьсгаагаа удаан авав.','Анужин|“Би алдсан зүйлээ буцааж авчирч чадахгүй.”','Анужин|“Гэхдээ би ганцаараа биш. Бас би өөрийнхөө талд байж чадна.”','Тэр хаалгыг нээв. Гадаа нар гарч байлаа.']);
+    await card(CARDS.roisman,null);await showEnding('good');}}
+ ]},
+/* ---------------- 7. МУУ ТӨГСГӨЛ ---------------- */
+{name:'ӨГЛӨӨ',a:'ӨГЛӨӨ',b:'Хаалттай цонх',sat:.3,mood:2.6,rain:true,spawn:[40,152],
+ intro:()=>['Өглөө болов. Гадаа бороо шивэрнэ.','Анужин сэрээд утсаа харав.'],
+ bg:()=>roomFlat('rain'),fg:()=>fgFlat('rain'),
+ objects:[
+  {id:'phone',label:'Утас',hit:[156,94,20,16],at:[166,138],lines:()=>[
+    isOpen('c4')?'Тэмүүлэн|“Өчигдөр чи надад юу ч бичсэнгүй. Санаа зовж байна. Зүгээр үү?”':'Тэмүүлэн|“Би чамд хайртай. Гэхдээ хана руу ярьж байгаа юм шиг санагдах болсон. Бидэнд хэсэг завсарлага хэрэгтэй юм шиг байна.”',
+    isOpen('c5')?'Солонго|“Өнөөдөр уулзъя гэсэн чинь... чи ирээгүй. Зүгээр үү?”':'Солонгын сүүлийн зурвас гурван долоо хоногийн өмнөх. Хариугүй хэвээр.',
+    'Анужин утсаа доош харуулан тавив.']},
+  {id:'mirror',label:'Толь',hit:[94,50,22,64],at:[104,138],lines:['Толинд хэн ч хүрч чадахааргүй хол харагдах эмэгтэй байна.','Анужин|“Би зүгээр.”','Энэ удаа хэн ч “Үнэхээр үү?” гэж асуусангүй.']},
+  {id:'window',label:'Цонх',trigger:true,needs:['phone'],hit:[194,28,68,66],at:[228,138],
+   notReady:['Цонхны цаана бороо орсоор.','Анужин эхлээд утсаа харав.'],
+   run:async()=>{
+    await say(['Анужин цонхны өмнө удаан зогсов. Бороо зогсохгүй нь.','Хэлж чадаагүй үгс нь дотор нь хэвээрээ. Хаалга нь дотроосоо түгжээтэй.','...Гэхдээ түлхүүр нь ч мөн дотор нь бий.']);
+    await card(CARDS.english,null);await showEnding('bad');}}
+ ]}
+];
+
+async function nodeDone(){
+  S.resolved=['n1','n2','n3','n4'].filter(id=>S.seen.has(id)).length;
+  sfx('node');updateGrade();
+  if(S.resolved===4&&!S.flagNamed){
+    S.flagNamed=true;
+    await say(['Дөрвөн мэдрэмж. Дөрвөн нэр.','Шидэт эм ч биш, бэлэн хариулт ч биш. Зүгээр л Анужингийн өөртөө анх удаа хүлээн зөвшөөрсөн үнэнүүд.','Өрөөний голд ширээ гэрэлтэж эхлэв.']);
+    await card(CARDS.lieberman,null);
+  }
+}
+
+/* ============================================================
+   ӨРӨӨНҮҮДИЙГ ЗУРАХ
+   ============================================================ */
+function floorPlanks(y0,col,line){R(0,y0,W,H-y0,col);for(let y=y0+5,k=0;y<H;y+=7,k++){R(0,y,W,1,line);for(let xx=(k%3)*22;xx<W;xx+=64)R(xx,y-6,1,6,line)}}
+function roomLiving(t){
+  R(0,0,W,126,'#f2cfa0');
+  for(let y=6,k=0;y<120;y+=12,k++)for(let xx=(k%2)*6+4;xx<W;xx+=12)R(xx,y,1,1,'#e2b47f');
+  R(0,124,W,6,'#9c6440');R(0,123,W,1,'#c48a5c');
+  floorPlanks(130,'#c88a52','#b27342');
+  // цонх
+  R(14,26,58,64,'#fff3e2');R(18,30,50,56,'#94d6ff');R(18,58,50,28,'#bde9ff');
+  R(52,36,9,9,'#ffe27a');R(51,37,11,7,'#ffe27a');
+  R(24,48,14,4,'#ffffff');R(28,45,7,3,'#ffffff');R(36,66,10,3,'#ffffffcc');
+  R(42,30,2,56,'#fff3e2');R(18,57,50,2,'#fff3e2');
+  R(8,24,72,2,'#7a4b2e');R(8,26,8,66,'#f28da0');R(70,26,8,66,'#f28da0');R(11,26,1,66,'#dc7388');R(74,26,1,66,'#dc7388');
+  R(12,90,62,3,'#e9d3b5');
+  // хүрээтэй зураг
+  R(126,36,34,26,'#7a4b2e');R(129,39,28,20,'#bfe5f7');R(129,53,28,6,'#93cb7e');
+  R(149,41,4,4,'#ff6f6f');R(150,45,1,6,'#5a4a4a');
+  R(134,48,2,6,'#d96d7f');R(138,49,2,5,'#4b6a8a');R(141,47,2,7,'#c46a7c');
+  // буйдан
+  R(98,96,82,16,'#c95a6c');R(98,95,82,2,'#de7b8c');R(93,102,8,24,'#b44e60');R(177,102,8,24,'#b44e60');
+  R(100,110,76,12,'#da7082');R(100,122,76,4,'#a94457');R(98,126,3,3,'#5b3a28');R(177,126,3,3,'#5b3a28');
+  R(150,100,14,10,'#ffd27a');R(151,101,12,1,'#ffe3a0');
+  // туулай
+  R(112,104,8,8,'#f7f4ef');R(113,99,2,6,'#f7f4ef');R(117,101,2,4,'#efe6dc');R(114,106,1,1,'#333');R(117,106,1,1,'#333');R(115,108,2,1,'#f2a0a8');
+  // жижиг ширээ ба зураг
+  R(68,112,34,4,'#8a5a3c');R(71,116,3,12,'#6e4630');R(96,116,3,12,'#6e4630');
+  R(74,106,22,7,'#f7f0e2');R(76,107,5,4,'#ffcc3a');R(84,108,2,4,'#d96d7f');R(87,108,2,4,'#4b6a8a');R(90,109,2,3,'#ff7f9a');
+  // хивс
+  R(96,140,118,22,'#e09084');R(100,143,110,16,'#f0b2a5');for(let i=0;i<5;i++)R(108+i*22,146,10,10,'#e8a092');
+  // гал тогооны хаалга
+  R(234,44,62,84,'#8a5a3c');R(238,48,54,80,'#ffe0a0');
+  for(let i=0;i<7;i++)for(let j=0;j<2;j++)R(238+i*8,114+j*7,8,7,(i+j)%2?'#f3cf8c':'#fff0c8');
+  R(262,58,28,14,'#d9b98a');R(262,72,28,1,'#b8956a');R(244,54,12,12,'#bfe9ff');
+  // чийдэн, ургамал
+  R(200,70,2,56,'#6e4630');R(194,62,14,10,'#ffe9b0');R(196,125,10,3,'#6e4630');
+  R(302,108,12,18,'#b4643c');R(300,106,16,3,'#c8744a');R(306,92,3,15,'#4fae64');R(301,96,4,10,'#5bbd70');R(310,94,4,12,'#47a05a');
+}
+function fgLiving(t){
+  poly([18,86,68,86,150,176,58,176],'rgba(255,238,190,.16)');
+  for(let i=0;i<9;i++){const px=(30+i*19+Math.sin(t*.6+i)*8)%140+20,py=60+((t*6+i*23)%100);R(px,py,1,1,'rgba(255,250,220,.55)')}
+  glow(265,90,40,'rgba(255,220,140,.18)');
+}
+function roomHall(t){
+  R(0,0,W,92,'#b3bbc5');for(let xx=8;xx<W;xx+=16)R(xx,0,1,92,'#a9b1bc');
+  R(0,92,W,32,'#8b95a2');for(let xx=0;xx<W;xx+=32){R(xx+4,96,24,24,'#838d9a');R(xx+5,97,22,22,'#8b95a2')}
+  R(0,124,W,6,'#5b5f68');floorPlanks(130,'#71747d','#666971');
+  R(10,34,28,44,'#d9dee5');R(13,37,22,38,'#b8c6d2');R(23,37,2,38,'#d9dee5');
+  // толь
+  R(48,50,26,54,'#5a4a3e');R(51,53,20,48,'#c4d2dc');R(54,56,3,18,'#e4ecf2');R(51,96,20,5,'#aebdc8');
+  // утасны ширээ
+  R(114,110,34,3,'#5a4a3e');R(117,113,2,15,'#4a3c32');R(143,113,2,15,'#4a3c32');
+  R(123,104,16,6,'#7a2e2e');R(121,101,20,3,'#5a1f1f');R(128,106,6,2,'#c9b9a0');
+  for(let i=0;i<6;i++)R(141+i,103+((i+Math.floor(t*2))%2),1,1,'#3a1a1a');
+  // хайрцагнууд
+  R(184,104,30,24,'#a8875f');R(184,104,30,2,'#c2a27a');R(198,104,3,24,'#d6c39c');
+  R(188,88,24,16,'#b89770');R(188,88,24,2,'#cfb08a');R(199,88,3,16,'#e0cfaa');
+  R(191,84,7,4,'#f7f0e2');R(193,85,3,2,'#ffcc3a');
+  // өлгүүр, хүрэм
+  R(222,62,24,2,'#4a3c32');R(226,64,10,28,'#2f3d55');R(228,92,6,2,'#2f3d55');R(238,64,6,16,'#8a6a5a');
+  // хаалга
+  R(264,52,40,76,'#3e322c');R(268,56,32,72,'#6b5446');R(272,62,24,18,'#5f4a3d');R(272,86,24,36,'#5f4a3d');
+  R(276,64,16,12,'#cfe0ee');R(294,94,3,2,'#e0c070');
+}
+function fgHall(t){poly([276,76,292,76,250,170,214,170],'rgba(220,235,255,.08)');glow(24,56,30,'rgba(220,235,255,.12)')}
+function roomSchool(t){
+  R(0,0,W,90,'#e9e4d2');R(0,88,W,2,'#c8c2ad');
+  R(0,90,W,34,'#7896ab');for(let xx=0;xx<W;xx+=10)R(xx,90,1,34,'#6a879c');for(let y=98;y<124;y+=8)R(0,y,W,1,'#6a879c');
+  R(0,124,W,5,'#4e6578');
+  R(0,129,W,51,'#cfc8b6');for(let y=134;y<H;y+=8)R(0,y,W,1,'#c2bba8');
+  // цонхнууд
+  for(let i=0;i<2;i++){const wx=8+i*62;R(wx,16,50,58,'#f7f5ee');R(wx+3,19,44,52,'#cfe2ec');R(wx+3,50,44,21,'#b6cfb9');
+    R(wx+8,40,8,14,'#93b49c');R(wx+30,36,10,18,'#93b49c');R(wx+24,19,2,52,'#f7f5ee');R(wx+3,44,44,2,'#f7f5ee')}
+  // зарын самбар
+  R(136,38,54,40,'#7a5534');R(139,41,48,34,'#bd8f5e');
+  R(143,45,12,10,'#ffffff');R(158,44,10,14,'#ffe9a0');R(171,45,13,18,'#f7c1cc');
+  R(176,49,3,3,'#e0607a');R(175,50,5,1,'#e0607a');R(144,60,10,8,'#d8ecff');R(160,62,8,7,'#ffffff');
+  // шүүгээнүүд
+  for(let i=0;i<5;i++){const lx=196+i*12;R(lx,50,12,74,'#4c6a80');R(lx+1,51,10,72,'#5f8097');for(let v=0;v<3;v++)R(lx+3,55+v*3,6,1,'#4c6a80');R(lx+9,88,1,4,'#cfd6dc')}
+  // вандан
+  R(258,114,56,4,'#a0703f');R(262,118,3,10,'#6e4a2a');R(306,118,3,10,'#6e4a2a');
+  // ширээ, дэвтэр
+  R(84,110,40,4,'#a0703f');R(88,114,3,14,'#6e4a2a');R(117,114,3,14,'#6e4a2a');
+  R(96,104,16,7,'#3d4f7a');R(97,105,14,5,'#f4efe4');R(104,105,1,5,'#c9c1b0');R(99,106,4,1,'#9aa');R(106,107,4,1,'#9aa');
+}
+function fgSchool(t){poly([11,71,58,71,96,170,30,170],'rgba(255,255,245,.1)');poly([73,71,120,71,170,170,100,170],'rgba(255,255,245,.08)')}
+function roomCafe(t){
+  R(0,0,W,98,'#5a4448');for(let y=0,k=0;y<98;y+=6,k++){R(0,y,W,1,'#4c393d');for(let xx=(k%2)*8;xx<W;xx+=16)R(xx,y,1,6,'#4c393d')}
+  R(0,98,W,28,'#3e2e2c');R(0,98,W,2,'#5a4038');
+  floorPlanks(126,'#3a2c28','#30241f');
+  // том цонх
+  R(12,24,100,80,'#2a1f1f');R(16,28,92,72,'#1d2944');
+  R(16,70,92,30,'#232f4d');R(22,58,16,42,'#18213a');R(44,50,20,50,'#16203a');R(72,62,24,38,'#18213a');
+  for(let i=0;i<8;i++)R(26+i*10,64+(i%3)*8,2,2,'#e7c46a');
+  glow(86,44,22,'rgba(255,200,120,.35)');R(85,44,2,56,'#151a2a');R(82,42,8,3,'#ffd890');
+  R(60,28,2,72,'#2a1f1f');R(16,62,92,2,'#2a1f1f');
+  // гэрэл чийдэн
+  for(const lx of [174,238]){R(lx,0,1,30,'#222');poly([lx-6,36,lx+7,36,lx+4,30,lx-3,30],'#d49a4a');glow(lx,40,36,'rgba(255,200,120,.22)')}
+  // ширээ, сандал
+  R(136,104,10,4,'#5a3f2e');R(136,108,2,20,'#4a3226');R(144,92,2,36,'#4a3226');
+  R(202,104,10,4,'#5a3f2e');R(210,108,2,20,'#4a3226');R(202,92,2,36,'#4a3226');
+  R(148,108,52,4,'#6b4a36');R(172,112,4,16,'#4a3226');R(164,127,20,2,'#4a3226');
+  R(156,102,8,6,'#ece4d8');R(157,103,6,2,'#8a5a3a');R(154,107,12,1,'#d8d0c4');
+  R(182,102,8,6,'#ece4d8');R(183,103,6,2,'#8a5a3a');R(180,107,12,1,'#d8d0c4');
+  // лангуу, хаалга
+  R(222,88,40,40,'#4a3530');R(222,86,40,3,'#6b4c40');R(228,78,6,8,'#c9b090');R(240,80,8,6,'#9a7a60');
+  R(270,52,36,76,'#2a1f1f');R(274,56,28,72,'#3a2c28');R(278,60,20,30,'#24304d');R(298,92,2,3,'#c9a060');
+}
+function rain(x0,y0,w,h,t,n,col){g.save();g.beginPath();g.rect(x0,y0,w,h);g.clip();g.fillStyle=col;for(let i=0;i<n;i++){const rx=x0+((i*37.3)%w),ry=y0+((t*90+i*53)%(h+12))-12;g.fillRect(Math.round(rx),Math.round(ry),1,5)}g.restore()}
+function fgCafe(t){rain(16,28,92,72,t,26,'rgba(170,200,255,.45)');glow(174,108,30,'rgba(255,200,120,.10)')}
+function roomFlat(v){
+  const N=v==='night',M=v==='morning';
+  const wall=N?'#2c3040':M?'#f1dfcf':'#5a5c66',wd=N?'#272a38':M?'#e6d0bd':'#52545e';
+  R(0,0,W,124,wall);for(let xx=6;xx<W;xx+=14)R(xx,0,1,124,wd);
+  R(0,124,W,5,N?'#1d1f2a':M?'#b98d6a':'#40424a');
+  floorPlanks(129,N?'#24252e':M?'#c9a27c':'#4a4b52',N?'#1e1f27':M?'#b88f68':'#41424a');
+  // цонх
+  const gl=N?'#0f1630':M?'#ffd9a8':'#7d8590';
+  R(192,26,72,70,N?'#1a1c26':M?'#fff6ea':'#3a3c44');R(196,30,64,62,gl);
+  if(N){R(196,64,64,28,'#141c38');R(200,52,10,40,'#1b2238');R(214,58,14,34,'#1a2140');R(232,46,12,46,'#1b2238');R(248,60,10,32,'#1a2140');
+    for(let i=0;i<14;i++){const on=(Math.floor(S.t*.7+i*1.7)%5)!==0;if(on)R(202+(i*13)%54,50+(i*7)%38,1,1,'#ffd37a')}
+    R(246,36,6,6,'#e8e6d0');R(247,37,4,4,'#f6f4e2')}
+  else if(M){R(196,30,64,30,'#ffe9c4');R(196,60,64,32,'#ffc890');R(214,52,18,18,'#fff2c0');R(212,54,22,14,'#fff2c0');R(196,80,64,12,'#e8a878')}
+  else{R(196,70,64,22,'#6f7782');R(200,58,14,34,'#656c77');R(220,52,16,40,'#636a74');R(242,62,14,30,'#656c77')}
+  R(227,30,2,62,N?'#1a1c26':M?'#fff6ea':'#3a3c44');R(196,60,64,2,N?'#1a1c26':M?'#fff6ea':'#3a3c44');
+  const cur=N?'#3a3550':M?'#f2a2b4':'#5d5866';R(186,24,8,74,cur);R(262,24,8,74,cur);R(184,22,88,2,N?'#111':'#6e4630');
+  // ор
+  R(8,92,8,36,N?'#3a3346':M?'#a7735a':'#4a4550');R(16,110,74,16,N?'#4a4560':M?'#f4efe8':'#6a6872');
+  R(18,104,18,7,N?'#7a7590':M?'#ffffff':'#8a8892');R(38,106,52,14,N?'#5b5578':M?'#f0a0b2':'#66637a');R(38,106,52,2,N?'#6a6488':M?'#f7b8c6':'#74718a');
+  R(16,126,74,2,N?'#2a2636':'#5a4a40');
+  // толь
+  R(94,50,22,64,N?'#2a2532':M?'#a7735a':'#3e3a44');R(97,53,16,58,N?'#3d4458':M?'#d8e8f0':'#7a828c');R(99,55,3,20,N?'#525a70':M?'#f2fbff':'#929aa4');R(98,114,14,14,N?'#2a2532':M?'#8a5a44':'#3e3a44');
+  // ширээ
+  R(124,106,58,4,N?'#3e3442':M?'#b47a54':'#4e4652');R(127,110,3,18,N?'#30283a':'#7a5238');R(176,110,3,18,N?'#30283a':'#7a5238');
+  R(130,92,2,14,N?'#5a5266':'#6e4630');R(126,88,10,5,N?'#5a5266':M?'#ffe9b0':'#7a7480');
+  R(158,103,8,3,'#15151a');R(159,103,6,2,N?'#9fd0ff':M?'#c8e6ff':'#55606a');
+  R(140,100,14,6,N?'#3d3a52':M?'#4d73a8':'#4a4a5a');R(141,101,12,1,'#f4efe4');
+  // хуучин зураг
+  R(138,54,20,14,'#e9e0cc');R(141,57,5,5,'#e8c24a');R(149,59,2,5,'#c46a7c');R(152,59,2,5,'#4b6a8a');R(146,60,2,4,'#ff7f9a');R(147,52,2,3,'#cc3333');
+  // хаалга
+  R(280,54,30,74,N?'#1e1f28':M?'#8a5a3c':'#36343c');R(283,57,24,71,N?'#2a2b36':M?'#b07a52':'#46444e');R(302,92,2,3,'#d9b46a');
+  // ургамал
+  if(M){R(168,94,10,10,'#c8744a');R(170,84,2,10,'#4fae64');R(174,86,3,8,'#5bbd70');R(166,88,3,6,'#47a05a')}
+}
+function fgFlat(v){
+  if(v==='night'){glow(162,100,26,'rgba(150,200,255,.20)');glow(228,60,46,'rgba(120,140,220,.08)')}
+  else if(v==='morning'){poly([196,92,260,92,210,178,120,178],'rgba(255,230,170,.22)');glow(228,58,60,'rgba(255,220,160,.20)');
+    for(let i=0;i<8;i++){const px=140+((i*29+S.t*4)%110),py=110+((S.t*5+i*17)%60);R(px,py,1,1,'rgba(255,250,220,.6)')}}
+  else{rain(196,30,64,62,S.t,22,'rgba(210,220,235,.5)')}
+}
+function roomMind(t){
+  R(0,0,W,H,'#111118');
+  const warm=S.resolved/4;
+  R(0,124,W,56,'#16161f');
+  g.strokeStyle=`rgba(${60+warm*80},${55+warm*30},${70+warm*30},.9)`;g.lineWidth=1;
+  for(let i=0;i<9;i++){g.beginPath();const yy=14+i*12;g.moveTo(0,yy);for(let xx=0;xx<=W;xx+=12)g.lineTo(xx,yy+Math.sin((xx+i*31)*.05+t*.5)*4*(1-warm*.7));g.stroke()}
+  if(warm>0){g.fillStyle=`rgba(200,120,140,${.05*S.resolved})`;g.fillRect(0,0,W,H)}
+  // дурсамжийн бэлгэдлүүд
+  R(30,74,12,26,'#2a2834');R(32,76,8,22,'#3a3446');R(38,88,1,1,'#bba678'); // хаалга
+  R(270,86,16,12,'#3a3446');R(270,86,16,2,'#4a4456'); // хайрцаг
+  R(90,112,6,5,'#3a3446');R(98,112,6,5,'#3a3446'); // аяга
+  R(222,112,6,10,'#2a2834');R(223,113,4,6,'#4a5a7a'); // утас
+  // голын ширээ
+  const lit=S.resolved===4;
+  R(146,118,30,4,lit?'#7a5a62':'#2e2a34');R(150,122,2,14,lit?'#5a4048':'#24212a');R(170,122,2,14,lit?'#5a4048':'#24212a');
+  R(152,113,10,5,lit?'#f4efe4':'#4a4652');R(165,114,5,3,lit?'#9fd0ff':'#3a3a48');
+  if(lit)glow(160,116,34,'rgba(255,190,200,.22)');
+}
+function fgMind(t){
+  for(let i=0;i<14;i++){const px=(i*41+Math.sin(t*.4+i)*10)%W,py=(H-((t*8+i*27)%H));R(px,py,1,1,`rgba(200,190,220,${.25+S.resolved*.1})`)}
+}
+
+/* ============================================================
+   ЗУРАХ ЦИКЛ
+   ============================================================ */
+function curCh(){return CH[S.ch]}
+function visibleObjs(){return curCh().objects.filter(o=>!o.show||o.show())}
+function playerLook(){
+  const base=Object.assign({},ANU[S.ch]);
+  if(S.ch===5){const r=S.resolved/4;base.top=`rgb(${Math.round(85+130*r)},${Math.round(86+50*r)},${Math.round(95+60*r)})`;base.slouch=r<.5?1:0;base.sad=r<.75}
+  return base;
+}
+function drawMarker(o,t){
+  const [hx,hy,hw]=o.hit;const mx=hx+hw/2,my=hy-6+Math.sin(t*3+hx)*1.5;
+  const ready=o.trigger&&(o.needs||[]).every(id=>S.seen.has(id));
+  if(o.trigger&&!ready)return;
+  if(o.node)return;
+  if(!o.trigger&&S.seen.has(o.id))return;
+  const col=o.trigger?'#ff9fb6':'#ffe08a';
+  R(mx-1,my-2,2,5,col);R(mx-2,my-1,4,3,col);R(mx,my-3,1,1,'#fff');
+}
+function drawNodes(t){
+  for(const o of visibleObjs()){if(!o.node)continue;const done=S.seen.has(o.id);const [ax,ay]=o.at;const cy=ay-22;const p=1+Math.sin(t*3+ax)*.12;
+    glow(ax,cy,done?20:12,done?'rgba(255,170,190,.45)':'rgba(150,140,170,.25)');
+    const s=Math.round(5*p);R(ax-s,cy-1,s*2,3,done?'#f2b4c0':'#5e5868');R(ax-1,cy-s,3,s*2,done?'#f2b4c0':'#5e5868');R(ax-1,cy-1,3,3,done?'#fff0f3':'#9c8ca0')}
+}
+function render(t){
+  g.clearRect(0,0,W,H);
+  const ch=curCh();
+  ch.bg(t);
+  if(ch.mind)drawNodes(t);
+  // гүнээр нь эрэмбэлэх
+  const list=[];
+  for(const o of visibleObjs())if(o.draw)list.push({y:o.at[1]-6,f:()=>o.draw(t)});
+  list.push({y:P.y,f:()=>{const L=playerLook();L.dir=P.dir;L.walk=P.moving?P.walk:0;L.breath=P.moving?0:Math.floor(t*.9)%2;person(P.x,P.y,L)}});
+  list.sort((a,b)=>a.y-b.y).forEach(d=>d.f());
+  if(ch.fg)ch.fg(t);
+  for(const q of particles)R(q.x,q.y,q.s,q.s,q.col);
+  for(const tp of taps){const r=(1-tp.t)*6;g.strokeStyle=`rgba(255,220,230,${tp.t})`;g.lineWidth=1;g.strokeRect(tp.x-r,tp.y-r/2,r*2,r)}
+  if(S.mode==='play')for(const o of visibleObjs())drawMarker(o,t);
+  // дэлгэц рүү томруулж буулгах
+  x.imageSmoothingEnabled=false;
+  x.drawImage(buf,VIEW.x,VIEW.y,VIEW.w,VIEW.h,0,0,c.width,c.height);
+  const sx=c.width/VIEW.w;
+  // vignette
+  const vg=x.createRadialGradient(c.width/2,c.height/2,c.height*.35,c.width/2,c.height/2,c.width*.62);
+  vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,`rgba(0,0,0,${ch.mind?.7:.42})`);x.fillStyle=vg;x.fillRect(0,0,c.width,c.height);
+  // дотоод өрөөний шошго
+  if(ch.mind){x.textAlign='center';x.textBaseline='top';x.font=`800 ${Math.round((portrait?5:6.2)*sx)}px 'Noto Sans',Arial,sans-serif`;
+    for(const o of visibleObjs()){if(!o.node)continue;const done=S.seen.has(o.id);x.lineWidth=3;x.strokeStyle='rgba(0,0,0,.8)';
+      const lx=(o.at[0]-VIEW.x)*sx,ly=(o.at[1]-12-VIEW.y)*sx;x.strokeText(o.node,lx,ly);x.fillStyle=done?'#ffd6df':'#9a94a2';x.fillText(o.node,lx,ly)}}
+  if(S.fade>0){x.fillStyle=`rgba(6,6,10,${clamp(S.fade,0,1)})`;x.fillRect(0,0,c.width,c.height)}
+}
+
+/* ============================================================
+   ШИНЭЧЛЭЛ
+   ============================================================ */
+function setTarget(tx,ty){P.tx=clamp(tx,WALK.x0,WALK.x1);P.ty=clamp(ty,WALK.y0,WALK.y1)}
+function nearest(maxD){let best=null,bd=1e9;for(const o of visibleObjs()){const d=Math.hypot(P.x-o.at[0],P.y-o.at[1]);if(d<bd){bd=d;best=o}}return bd<=maxD?best:null}
+function update(dt){
+  S.t+=dt;
+  if(S.fade!==S.fadeTarget){const d=S.fadeTarget-S.fade,s=S.fadeSpeed*dt;S.fade=Math.abs(d)<=s?S.fadeTarget:S.fade+Math.sign(d)*s;if(S.fade===S.fadeTarget&&S.fadeRes){const r=S.fadeRes;S.fadeRes=null;r()}}
+  for(const q of particles){q.x+=q.vx*dt;q.y+=q.vy*dt;q.vy+=14*dt;q.t-=dt*.8}particles=particles.filter(q=>q.t>0);
+  for(const tp of taps)tp.t-=dt*2.2;taps=taps.filter(tp=>tp.t>0);
+  if(dlg&&dlg.ch<dlg.full.length){dlg.ch=Math.min(dlg.full.length,dlg.ch+dt*52);txt.textContent=dlg.full.slice(0,Math.floor(dlg.ch))}
+  P.moving=false;
+  if(S.mode==='play'){
+    const spd=S.ch<2?42:50;
+    let dx=0,dy=0;
+    if(keys.has('ArrowLeft')||keys.has('a'))dx--;if(keys.has('ArrowRight')||keys.has('d'))dx++;
+    if(keys.has('ArrowUp')||keys.has('w'))dy--;if(keys.has('ArrowDown')||keys.has('s'))dy++;
+    if(dx||dy){P.tx=null;P.pending=null;const l=Math.hypot(dx,dy);P.x+=dx/l*spd*dt;P.y+=dy/l*spd*dt*.8;if(dx)P.dir=Math.sign(dx);P.moving=true}
+    else if(P.tx!=null){const vx=P.tx-P.x,vy=P.ty-P.y,d=Math.hypot(vx,vy);
+      if(d<1.2){P.x=P.tx;P.y=P.ty;P.tx=null;if(P.pending){const o=P.pending;P.pending=null;interactObj(o)}}
+      else{const s=Math.min(d,spd*dt);P.x+=vx/d*s;P.y+=vy/d*s;if(Math.abs(vx)>.4)P.dir=Math.sign(vx);P.moving=true}}
+    P.x=clamp(P.x,WALK.x0,WALK.x1);P.y=clamp(P.y,WALK.y0,WALK.y1);
+    if(P.moving)P.walk+=dt*7;
+    near=nearest(22);
+  }else near=null;
+  const camT=clamp(P.x-VIEW.w/2,0,W-VIEW.w);VIEW.x+=(camT-VIEW.x)*Math.min(1,dt*4);
+  syncUI();updateMusic();
+}
+
+/* ============================================================
+   UI
+   ============================================================ */
+const hud=$('hud'),chName=$('chName'),dots=$('dots'),promptEl=$('prompt'),promptT=$('promptT');
+const dlgBox=$('dlg'),who=$('who'),txt=$('txt');
+const choiceBox=$('choice'),cq=$('cq'),optsEl=$('opts');
+const cardEl=$('card');
+const WHO_COL={'Ээж':'#8a3f50','Аав':'#2f4a6a','Анужин':'#7a3a5a','Солонго':'#3a5a4a','Тэмүүлэн':'#3f5f55'};
+function syncUI(){
+  hud.classList.toggle('show',S.started&&S.mode!=='ending');
+  const showP=near&&S.mode==='play';
+  promptEl.classList.toggle('show',!!showP);
+  if(showP)promptT.textContent=near.label;
+}
+function updateDots(){dots.innerHTML=CH_ORDER.map(id=>`<i class="${id in S.choices?(S.choices[id]?'on':'off'):''}"></i>`).join('')}
+function updateGrade(){
+  const ch=curCh();let sat=ch.sat;
+  if(S.ch>=1&&S.ch<=5)sat+=openCount()*.11;
+  if(ch.mind)sat+=S.resolved*.09;
+  c.style.filter=`saturate(${clamp(sat,.2,1.15).toFixed(2)})`;
+}
+
+let dlg=null;
+function say(lines){
+  lines=(typeof lines==='function'?lines():lines).filter(Boolean);
+  if(!lines.length)return Promise.resolve();
+  return new Promise(res=>{dlg={lines,i:0,ch:0,full:'',res,t0:performance.now()};S.mode='dialogue';showLine()});
+}
+function showLine(){
+  const s=dlg.lines[dlg.i],k=s.indexOf('|');
+  const w=k>0?s.slice(0,k):'',tx=k>0?s.slice(k+1):s;
+  who.textContent=w;who.style.display=w?'inline-block':'none';if(w)who.style.background=WHO_COL[w]||'#3a2f3a';
+  txt.classList.toggle('narr',!w);
+  dlg.full=tx;dlg.ch=0;txt.textContent='';dlg.t0=performance.now();
+  dlgBox.classList.add('show');blip();
+}
+function advance(){
+  if(!dlg||performance.now()-dlg.t0<120)return;
+  if(dlg.ch<dlg.full.length){dlg.ch=dlg.full.length;txt.textContent=dlg.full;return}
+  dlg.i++;
+  if(dlg.i>=dlg.lines.length){const r=dlg.res;dlg=null;dlgBox.classList.remove('show');S.mode='busy';r()}
+  else showLine();
+}
+dlgBox.addEventListener('pointerdown',e=>{e.stopPropagation();advance()});
+ui.addEventListener('pointerdown',e=>{if(portrait&&S.mode==='dialogue')advance()});
+
+let pickFn=null,choiceSel=0,choiceT0=0;
+function choose(q,texts){
+  return new Promise(res=>{
+    S.mode='choice';cq.textContent=q;optsEl.innerHTML='';
+    texts.forEach((t,i)=>{const b=document.createElement('button');b.className='opt';b.innerHTML=`<span class="k">${i+1}</span><span>${esc(t)}</span>`;
+      b.addEventListener('click',e=>{e.stopPropagation();pick(i)});b.addEventListener('pointerenter',()=>{choiceSel=i;markSel()});optsEl.appendChild(b)});
+    choiceSel=-1;markSel();choiceBox.classList.add('show');choiceT0=performance.now();
+    pickFn=i=>{choiceBox.classList.remove('show');pickFn=null;S.mode='busy';res(i)};
+  });
+}
+function markSel(){[...optsEl.children].forEach((b,i)=>b.classList.toggle('sel',i===choiceSel))}
+function pick(i){if(pickFn&&performance.now()-choiceT0>380)pickFn(i)}
+
+let cardRes=null,cardT0=0;
+function card(cd,why){
+  return new Promise(res=>{
+    S.mode='card';$('cardT').textContent=cd.t;$('cardP').textContent=cd.p;$('cardC').textContent='— '+cd.c;
+    const w=$('cardW');w.style.display=why?'block':'none';w.textContent=why||'';
+    cardEl.classList.add('show');cardT0=performance.now();sfx('card');
+    cardRes=()=>{cardEl.classList.remove('show');cardRes=null;S.mode='busy';res()};
+  });
+}
+function closeCard(){if(cardRes&&performance.now()-cardT0>500)cardRes()}
+$('cardBtn').addEventListener('click',closeCard);
+
+function fadeTo(v,dur=.8){return new Promise(res=>{if(S.fade===v){res();return}S.fadeTarget=v;S.fadeSpeed=1/dur;S.fadeRes=res})}
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+async function showTitle(a,b){const tc=$('titleCard');$('tcA').textContent=a;$('tcB').textContent=b;tc.classList.add('show');await wait(1700);tc.classList.remove('show');await wait(500)}
+let toastT=null;function toast(s,ms=4200){const el=$('toast');el.textContent=s;el.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>el.classList.remove('show'),ms)}
+
+function burst(px,py,col,n=18){for(let i=0;i<n;i++)particles.push({x:px,y:py,vx:(Math.random()-.5)*30,vy:(Math.random()-.9)*24,t:1,col,s:Math.random()<.3?2:1})}
+
+/* ============================================================
+   УРСГАЛ
+   ============================================================ */
+async function goChapter(i){
+  S.mode='busy';
+  await fadeTo(1,.9);
+  S.ch=i;const ch=CH[i];
+  P.x=ch.spawn[0];P.y=ch.spawn[1];P.dir=1;P.tx=null;P.pending=null;VIEW.x=clamp(P.x-VIEW.w/2,0,W-VIEW.w);
+  S.seen=new Set();S.resolved=0;
+  chName.textContent=ch.name;updateGrade();updateDots();
+  await showTitle(ch.a,ch.b);
+  await fadeTo(0,1.1);
+  await say(ch.intro);
+  S.mode='play';
+  if(i===0&&!S.flagHint&&!portrait){S.flagHint=true;toast(isTouch?'Дэлгэц дээр дарж алхаарай · ✦ тэмдэгтэй зүйл дээр дарж харилцана':'WASD / сумаар алхаж, E / Space-ээр харилцана · Хулганаар дарж ч болно')}
+}
+async function interactObj(o){
+  if(S.mode!=='play')return;
+  S.mode='busy';P.tx=null;P.pending=null;
+  {const cx=o.hit[0]+o.hit[2]/2;if(Math.abs(cx-P.x)>2)P.dir=cx>P.x?1:-1}
+  if(o.trigger){
+    const ok=(o.needs||[]).every(id=>S.seen.has(id));
+    if(!ok){await say(o.notReady);S.mode='play';return}
+    S.seen.add(o.id);await o.run();return;
+  }
+  const first=!S.seen.has(o.id);S.seen.add(o.id);
+  if(first)burst(o.hit[0]+o.hit[2]/2,o.hit[1],'#ffe08a',10);
+  near=o;
+  await say(o.lines);
+  if(first&&o.after)await o.after();
+  if(S.mode!=='ending')S.mode='play';
+}
+function showEnding(type){
+  S.mode='ending';S.ending=type;
+  const good=type==='good';
+  $('endT').textContent=good?'ӨГЛӨӨНИЙ ДАРАА':'ХААЛТТАЙ ЦОНХ';
+  $('endQ').textContent=good?'“Би алдсанаа буцааж авчрахгүй. Гэхдээ би ганцаараа биш.”':'“Хэлж чадаагүй үгс алга болдоггүй. Тэд зүгээр л хүлээдэг.”';
+  $('endS').textContent=good?'Найз нөхөд, хайртай хүн, бас өөрөө өөртөө түшиг болох хүч Анужинд байна.':'Энэ бол хувь тавилан биш. Өөр сонголтоор дахин тоглоод үзээрэй. Бодит амьдралд ч хаалга хэзээ ч бүрэн хаагддаггүй.';
+  const n=openCount();
+  $('summary').innerHTML=`<div style="font-weight:800;margin-bottom:4px">Анужингийн нээлттэй байдал: ${n}/6</div>`+
+    CH_ORDER.map(id=>`<div class="${S.choices[id]?'o':'c'}">${S.choices[id]?'●':'○'} ${CHOICES[id].label} — ${S.choices[id]?'хэлсэн':'дотроо үлдээсэн'}</div>`).join('');
+  $('ending').classList.add('show');
+  return Promise.resolve();
+}
+function restart(){
+  $('ending').classList.remove('show');
+  S.choices={};S.order=[];S.flagBell=false;S.flagNamed=false;particles=[];
+  goChapter(0);
+}
+$('againBtn').onclick=restart;
+$('refList').innerHTML=REFS.map(r=>`<p>${r}</p>`).join('');
+$('refsBtn').onclick=()=>$('refs').classList.add('show');
+$('refsClose').onclick=()=>$('refs').classList.remove('show');
+$('ctlText').innerHTML=isTouch?'Дэлгэц дээр дарж алхана · Юман дээр дарж харилцана · Сонголтоо товшиж сонгоно':'Алхах: WASD / сум эсвэл хулганаар дарах · Харилцах: E / Space · Үргэлжлүүлэх: Enter · Сонгох: 1 / 2';
+
+function start(){
+  if(S.started)return;
+  S.started=true;$('intro').classList.remove('show');
+  setSound(true);goChapter(0);
+}
+$('startBtn').addEventListener('click',start);
+
+/* ============================================================
+   ОРОЛТ
+   ============================================================ */
+c.addEventListener('pointerdown',e=>{
+  e.preventDefault();
+  if(S.mode==='dialogue'){advance();return}
+  if(S.mode!=='play')return;
+  const r=c.getBoundingClientRect();
+  const gx=VIEW.x+(e.clientX-r.left)/r.width*VIEW.w,gy=VIEW.y+(e.clientY-r.top)/r.height*VIEW.h;
+  let hitO=null;
+  for(const o of visibleObjs()){const [hx,hy,hw,hh]=o.hit;if(gx>=hx-5&&gx<=hx+hw+5&&gy>=hy-5&&gy<=hy+hh+5)hitO=o}
+  if(!hitO)for(const o of visibleObjs()){if(Math.hypot(gx-o.at[0],gy-o.at[1])<10)hitO=o}
+  if(hitO){taps.push({x:hitO.at[0],y:hitO.at[1],t:1});
+    if(Math.hypot(P.x-hitO.at[0],P.y-hitO.at[1])<3)interactObj(hitO);else{setTarget(hitO.at[0],hitO.at[1]);P.pending=hitO}}
+  else{setTarget(gx,gy);P.pending=null;taps.push({x:P.tx,y:P.ty,t:1})}
+});
+const MOVE=new Set(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','w','a','s','d']);
+addEventListener('keydown',e=>{
+  const k=e.key.length===1?e.key.toLowerCase():e.key;
+  const act=e.key==='Enter'||e.key===' '||k==='e';
+  if(MOVE.has(k)||act)e.preventDefault();
+  if(MOVE.has(k))keys.add(k);
+  if(e.repeat)return;
+  if(!S.started){if(act)start();return}
+  if($('refs').classList.contains('show')){if(act||e.key==='Escape')$('refs').classList.remove('show');return}
+  switch(S.mode){
+    case 'dialogue':if(act)advance();break;
+    case 'choice':
+      if(k==='1'||k==='2')pick(+k-1);
+      else if(k==='ArrowUp'||k==='w'){choiceSel=choiceSel<=0?1:0;markSel()}
+      else if(k==='ArrowDown'||k==='s'){choiceSel=choiceSel===1?0:1;markSel()}
+      else if(act&&choiceSel>=0)pick(choiceSel);
+      break;
+    case 'card':if(act)closeCard();break;
+    case 'play':if(act){const o=nearest(22);if(o)interactObj(o)}break;
+  }
+});
+addEventListener('keyup',e=>{const k=e.key.length===1?e.key.toLowerCase():e.key;keys.delete(k)});
+addEventListener('blur',()=>keys.clear());
+
+/* ============================================================
+   ДУУ ХӨГЖИМ (Web Audio)
+   ============================================================ */
+let audioOn=false,ac=null;const music={master:null,drone:null,droneGain:null,rainGain:null,nextAt:0,step:0};
+const soundBtn=$('soundBtn');
+const nf=m=>440*Math.pow(2,(m-69)/12);
+function tone(midi,when,dur=.5,gain=.018,type='sine'){
+  if(!audioOn||!ac)return;
+  const o=ac.createOscillator(),gn=ac.createGain(),f=ac.createBiquadFilter();
+  o.type=type;o.frequency.setValueAtTime(nf(midi),when);f.type='lowpass';f.frequency.setValueAtTime(type==='triangle'?1600:2400,when);
+  gn.gain.setValueAtTime(.0001,when);gn.gain.exponentialRampToValueAtTime(Math.max(.0002,gain),when+.025);gn.gain.exponentialRampToValueAtTime(.0001,when+dur);
+  o.connect(f);f.connect(gn);gn.connect(music.master);o.start(when);o.stop(when+dur+.05);
+}
+function blip(){if(!audioOn||!ac)return;tone(76+Math.floor(Math.random()*4),ac.currentTime,.06,.006,'square')}
+function sfx(k){
+  if(!audioOn||!ac)return;const n=ac.currentTime;
+  if(k==='open'){[0,4,7,12].forEach((s,i)=>tone(67+s,n+i*.09,.7,.03,'triangle'))}
+  else if(k==='closed'){tone(48,n,1.2,.03,'sine');tone(51,n+.15,1.1,.02,'sine')}
+  else if(k==='card'){tone(84,n,.9,.02,'sine');tone(91,n+.12,.9,.015,'sine')}
+  else if(k==='node'){[0,7,12].forEach((s,i)=>tone(72+s,n+i*.07,.8,.022,'sine'))}
+  else if(k==='bell'){tone(88,n,1.2,.025,'triangle');tone(95,n+.08,1,.018,'triangle')}
+}
+function moodNow(){
+  if(!S.started)return 0;const ch=curCh();
+  if(ch.mind)return 3+S.resolved/4*.99;
+  return ch.mood+(S.ch>=1&&S.ch<=4?openCount()*.12:0);
+}
+function pattern(m){
+  if(m<.5)return{tempo:84,root:60,notes:[0,4,7,9,7,4,2,7],bass:[0,0,5,0],br:.9};
+  if(m<1.5)return{tempo:70,root:57,notes:[0,3,7,5,3,0,-2,3],bass:[0,-2,3,-2],br:.45};
+  if(m<2.5)return{tempo:58,root:52,notes:[0,3,7,3,2,-2,0,-4],bass:[0,-5,-2,-5],br:.22};
+  if(m<3.24)return{tempo:52,root:48,notes:[0,3,6,3,-1,3,1,-2],bass:[0,-5,-1,-5],br:.10};
+  if(m<3.49)return{tempo:58,root:50,notes:[0,3,7,3,2,5,3,0],bass:[0,-5,0,-2],br:.28};
+  if(m<3.74)return{tempo:64,root:53,notes:[0,3,7,5,3,7,8,5],bass:[0,-5,3,-2],br:.48};
+  if(m<3.99)return{tempo:72,root:55,notes:[0,4,7,5,9,7,4,2],bass:[0,-5,5,0],br:.7};
+  return{tempo:84,root:60,notes:[0,4,7,9,12,9,7,4],bass:[0,5,0,7],br:1};
+}
+function updateMusic(){
+  if(!audioOn||!ac||!music.master)return;
+  const m=moodNow(),p=pattern(m),now=ac.currentTime;
+  music.drone.frequency.setTargetAtTime(nf(p.root-24),now,.8);
+  music.droneGain.gain.setTargetAtTime(m>=2&&m<3.5?.016:.008,now,.6);
+  const rainy=S.started&&curCh().rain&&S.mode!=='ending';
+  music.rainGain.gain.setTargetAtTime(rainy?.05:0,now,.8);
+  const beat=60/p.tempo;
+  if(music.nextAt<now-1)music.nextAt=now+.05;
+  while(music.nextAt<now+.2){
+    const i=music.step%p.notes.length,mel=p.root+p.notes[i];
+    tone(mel,music.nextAt,beat*.72,.010+.012*p.br,m<2?'triangle':'sine');
+    if(i%2===0)tone(p.root-12+p.bass[Math.floor(i/2)%p.bass.length],music.nextAt,beat*.92,.010+(1-p.br)*.004,'sine');
+    if(m>=3.5&&i%4===2)tone(mel+12,music.nextAt+beat*.08,beat*.38,.006*p.br,'triangle');
+    music.step++;music.nextAt+=beat;
+  }
+}
+function initAudio(){
+  if(music.master)return;
+  music.master=ac.createGain();music.master.gain.value=.7;music.master.connect(ac.destination);
+  music.drone=ac.createOscillator();music.droneGain=ac.createGain();music.drone.type='sine';music.drone.frequency.value=nf(36);music.droneGain.gain.value=.008;
+  music.drone.connect(music.droneGain);music.droneGain.connect(music.master);music.drone.start();
+  const len=ac.sampleRate*2,nb=ac.createBuffer(1,len,ac.sampleRate),d=nb.getChannelData(0);for(let i=0;i<len;i++)d[i]=Math.random()*2-1;
+  const src=ac.createBufferSource();src.buffer=nb;src.loop=true;const lp=ac.createBiquadFilter();lp.type='lowpass';lp.frequency.value=1100;
+  music.rainGain=ac.createGain();music.rainGain.gain.value=0;src.connect(lp);lp.connect(music.rainGain);music.rainGain.connect(music.master);src.start();
+  music.nextAt=ac.currentTime+.1;
+}
+function setSound(on){
+  audioOn=on;soundBtn.textContent=on?'♪ ДУУ':'♪ ДУУГҮЙ';soundBtn.style.opacity=on?1:.6;
+  if(on){try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();if(ac.state==='suspended')ac.resume();initAudio();music.master.gain.setTargetAtTime(.7,ac.currentTime,.1);music.nextAt=Math.max(music.nextAt,ac.currentTime+.05)}catch(err){audioOn=false}}
+  else if(ac&&music.master)music.master.gain.setTargetAtTime(.0001,ac.currentTime,.08);
+}
+soundBtn.addEventListener('pointerdown',e=>{e.stopPropagation();e.preventDefault();setSound(!audioOn)});
+document.addEventListener('visibilitychange',()=>{if(!ac)return;if(document.hidden)ac.suspend();else if(audioOn)ac.resume()});
+
+/* ============================================================
+   ЭХЛЭЛ
+   ============================================================ */
+updateDots();chName.textContent=CH[0].name;
+let last=0;
+function frame(t){const dt=Math.min(.033,(t-last)/1000||0);last=t;update(dt);render(S.t);requestAnimationFrame(frame)}
+requestAnimationFrame(frame);
+window.__game={S,P,VIEW,CH,CHOICES,goChapter,interactObj,showEnding,visibleObjs};
+})();
+</script>
 </body>
 </html>
